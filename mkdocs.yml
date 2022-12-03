@@ -1,0 +1,14 @@
+site_name: 赵纯想个人网站
+nav:
+    - 赵纯想: index.md
+    - 转山App: 
+       - 产品介绍: lifelooper/LifelooperApp.md
+       - 用户协议: lifelooper/UserAgreement.md
+    - 文学创作: 
+       - 光谷广场.md
+    - 电影《你我皆凡人》: 
+       - 电影主页: film/film.md
+       - 剧本: film/script.md
+    - 联系方式: contact.md
+    
+    
