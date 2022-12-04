@@ -14,7 +14,11 @@ nav:
     - 电影《你我皆凡人》: 
        - 电影主页: film/film.md
        - 剧本: film/script.md
-    - SwiftUI教程: swiftUI/swiftUI.md
+    - SwiftUI教程: 
+       - 新手课: swiftUI/swiftUINoviceCourse.md
+       - 进阶课1-加入Git项目: swiftUI/swiftUIAdvancedCourse1_JoinGit.md
+
+
     - 联系方式: contact.md
     
 plugins:
