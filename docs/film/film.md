@@ -66,7 +66,7 @@ Your recruiter is your partner in this process and is here to answer any questio
 
 [Product design interviews](https://www.notion.so/Product-design-interviews-df49cc45b991411493dfd7e4ac007357)
 
-## Business roles
+## Business  roles
 
 ---
 

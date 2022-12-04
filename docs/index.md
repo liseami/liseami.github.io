@@ -1,113 +1,70 @@
-# 赵纯想
+# 👋 你好，  
+# 我是赵纯想
 
-```
-👋 这个网站主要介绍我在世界上创造的东西。
-📱 如果你需要一个类似的个人Resume网站，请与我取得联系（付费服务）。
-```
+### 这个网站用于介绍我在世界上创造的东西。  
 
-### **联系我**
+---
+## **软件**
 
-[📧 liseami@qq.com](mailto:adalovelace@mail.com)
+### [转山](https://book.douban.com/subject/26990080/)
+***iOS习惯养成应用**, 上架在AppStore – (2022年12月15日 - 当前版本：1.0.2)*
 
-[🐦 twitter](http://twitter.com/notionhq)
+“转山”是一种盛行于西藏地区的庄严活动。信徒们围绕冈仁波齐（གངས་རིན་པོ་ཆེ），笃定地重复脚下的路线——转山App正是构想于此，帮助你：规划行为的循环，记录每一次专注。直至知行合一，抵达你内心的圣山。  
 
-[🔗 抖音](https://www.linkedin.com/company/notionhq/mycompany/)
+[下载（*系统版本要求：iOS15.0+*）](https://github.com/makenotion)
 
-[👾 私人微信](https://github.com/makenotion)
+---
+## **课程**
 
-# 软件工程
+### [iOS开发入门课](https://www.cctalk.com/m/group/90565680)
+***课程**, 上架在CCTalk – (¥299.00)*
 
-### 转山App
+- 0基础。0计算机知识。完全小白的新手课。用生活中的字眼，解释编程世界中的“看似高大上的词汇”。纵观全网，最轻松的“单口相声版”《SwiftUI入门教程》，由讲课鬼才赵纯想出品。
 
-My "native" programming language, I've worked with it for over 6 years. I've used it in the front-end with React and Redux, in the back-end for APIs with Node, Express and Hapi.js and for testing automation using Mocha and later on, Jest.
+[课程报名](https://www.cctalk.com/m/group/90565680)
 
-### Golang
-
-I've started learning it recently and found it challenging (in a good way!) I'm not proficient yet but I've worked on some features and fixes on my own.
-
-### Technical writing
-
-I enjoy writing about technical subjects and I feel I can do a pretty good job about it! My motivation is explaining things in simple and practical terms and thus making things easier for others.
 
 ---
 
-# 文学出版
+## **文学创作**
 
-### **《坏一坏》**
+### [光谷广场](/docs/光谷广场.md)
 
-***短篇小说集**, 长江文艺出版社 – (Dec 2019 - Present)*
+***长篇小说**, 未出版 – (2022-11-9)*
 
-- Full-stack engineer in the team responsible for integrations and developer tools. We're in charge of defining and improving the developer experience with Typeform's platform.
-- Initially focused on front-end, single-handedly led the efforts to re-build our front-ends for OAuth applications, Personal Tokens and Webhooks from scratch using React, Redux, Styled Components, Jest, etc.
-- Contributed to our back-end services for webhooks and integrations built in Node.js (Express/Hapi) and GoLang with PostgreSQL.
-- Performed coaching of junior developers joining the team, doing frequent pair and mob programming sessions, while working with senior engineers to define roadmaps and feature priorities.
 
-### QA Automation Engineer
 
-***OLX Group**, Buenos Aires, Argentina – (May 2014 - Oct 2019)*
+### [坏一坏](https://book.douban.com/subject/26990080/)
 
-- Built automated acceptance and contract test suites for the company's core and payments APIs, using Node.js, Mocha and Chai and later on PHP with Behat. Reviewed and validated the development of new features to ensure the API design and underlying logic remained consistent.
-- Took active part in the Diversity and Women in Tech initiatives, with regular meetings and driving proposals across the company. Coached colleagues in drafting talk proposals and public in general.
+***短篇小说集**, 长江文艺出版社 – (2017-4-1 - ISBN: 9787541145087)*
 
-### Software Tester
+- 凉炘的小说虽然以“坏一坏”冠名，但其实坏中有深情，我能读到他骨子里藏不住深情款款，“假坏真善”最是青春时，愿每一个读完作品的多情少年莫负春光。 ———蔡崇达
 
-***Hexacta**, Buenos Aires, Argentina – (Aug 2012 - Apr 2014)*
+- 记忆最深刻，是凉炘笔下的兰州。作为兰州人，不管前一天晚上如何醉生梦死，“坏上一坏”，第二天早晨吃一碗牛肉面就都过去了。 ————低苦艾乐队
 
-- Developed and executed functional testing plans for Bolloré Ipaki, a shipping container terminal and logistics administration web app.
-- Evaluated new client requirements, defined use cases and maintained a local testing environment.
+### [人生灿灿](https://book.douban.com/subject/34865437/)
 
-### **QA Analyst**
+***短篇小说集**, 四川文艺出版社 – (2019-11 - ISBN: 9787541155109)*
 
-***Wunderman** BA, Buenos Aires, Argentina – (Apr 2011 - Jul 2012)*
-
-- In the advertising agency Wunderman, performed as the single QA in multiple simultaneous projects of diverse complexity. Validated, copy and assets, user flows and functionality and did exploratory testing on tools and apps within the public websites for Ford and Lincoln cars.
-- Managed communication with PMs and developer teams remotely and was in charge of estimation and prioritisation.
+- 收录凉炘短篇小说十四篇，包括在“One·一个”App中高点击量与高赞的作品。一群有着不同年龄、阅历的底层小人物，他们拒绝向生命中的苦难屈服，选择了以自己的方式投入战斗，捍卫所爱。
 
 ---
 
+## **电影**
 
-# Languages
+### [你我皆凡人](/docs/film/film.md)
 
-### Spanish 🇪🇸🇦🇷
+***编剧**, 导演 郭无用*
 
-Native speaker
+[电影剧组主页](https://github.com/makenotion)
 
-### English 🇺🇸
-
-Proficient speaker
 
 ---
 
-# Articles and Talks
+## **联系我**
 
-- [Dancing with OAuth: a step by step guide](https://dev.to/anabella/dancing-with-oauth-emp)
-- [A peep beneath the hood of PassportJS' OAuth flow](https://dev.to/anabella/a-peep-beneath-the-hood-of-passportjs-oauth-flow-eb5)
-- [Why do great developers love writing tests?](https://dev.to/anabella/why-do-great-developers-love-writing-tests-1o6j)
-- [A junior, a mid and a senior dev walk into a bar](https://dev.to/anabella/a-junior-a-mid-and-a-senior-dev-walk-into-a-bar-414f)
-- [The self-confidence toolbox for job interviews](https://dev.to/typeform/the-self-confidence-toolbox-for-job-interviews-4k3j)
-- [Understanding the different pairings of CSS Position flavours](https://dev.to/anabella/understanding-the-different-pairings-of-css-position-flavours-5855)
-- [Figuring out CSS floats with two sushi recipes](https://dev.to/anabella/figuring-out-css-floats-with-sushi-recipes-2c5o)
+[📧 liseami@qq.com](mailto:liseami@qq.com)
 
-🗣 **Talk:** [Learning the OAuth Dance](https://www.youtube.com/watch?v=ec2NBIoaUCM&t=1s) (APIdays Paris Dec 2018)
+[🔗 抖音 - 赵纯想](https://v.douyin.com/r9A8Kxu/)
 
----
-
-# Education
-
-### **Bachelor's Degree in Computer Systems Analysis**
-
-*2017 (unfinished due to Relocation)*
-
-ORT - Buenos Aires
-
----
-
-# Contact
-
-[📧 adalovelace@mail.com](mailto:adalovelace@mail.com)
-
-[🐦 twitter.com/adalovelace](http://twitter.com/notionhq)
-
-[🔗 linkedin.com/in/adalovelace](https://www.linkedin.com/company/notionhq/mycompany/)
-
-[👾 github.com/adalovelace](https://github.com/makenotion)
+[👾 私人微信 zhaochunxiang1109](https://github.com/makenotion)  
