@@ -1,5 +1,5 @@
 
-#**《你我皆凡人》剧组文档LeancloudCI测试**
+#**《你我皆凡人》剧组文档测试**
 - **Read over the job description.** To get ready for your interview, read through the job description and make sure you know what is expected of the role.
 - **Everyone loves a candidate who does their homework!** Do some research on who you'll be meeting (we'll give you names ahead of time), and do some reading on Notion as a company, business, and product. You should know what our mission and [values](https://www.notion.so/blog/notion-operating-values) are and be able to speak to them.
 - **Come with questions.** This is your chance to interview us as well. We value curiosity and want to answer your questions.
