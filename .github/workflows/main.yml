@@ -1,6 +1,6 @@
 # 自动部署至Leancloud
 
-name: CI
+name: LeanCloudCI
 
 on:
   push:
