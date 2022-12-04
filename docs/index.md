@@ -69,6 +69,8 @@
 
 [📧 liseami@qq.com](mailto:liseami@qq.com)
 
+[📧 微博](https://weibo.com/274300559)
+
 [🔗 抖音 - 赵纯想](https://v.douyin.com/r9A8Kxu/)
 
-[👾 私人微信 zhaochunxiang1109](https://github.com/makenotion)  
+[👾 私人微信](copy:zhaochunxiang1109)  
