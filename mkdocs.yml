@@ -1,4 +1,8 @@
 site_name: PureFantasy
+site_description: 赵纯想个人网站
+site_author: 赵纯想
+copyright: 赵纯想©️版权所有 2022
+
 nav:
     - 赵纯想: index.md
     - 转山App: 
