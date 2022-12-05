@@ -1,3 +1,4 @@
+
 # 👋 你好，  
 # 我是赵纯想
 
@@ -38,7 +39,10 @@
 
 ### [坏一坏](https://book.douban.com/subject/26990080/)
 ***短篇小说集**, 长江文艺出版社 – (2017-4-1 - ISBN: 9787541145087)*  
-<img decoding="async" src="./img/坏一坏海报.jpg" width="20%">
+<img src="./img/坏一坏海报.jpg" id="坏一坏海报" style="width: 50%;">
+
+
+
 
 - 凉炘的小说虽然以“坏一坏”冠名，但其实坏中有深情，我能读到他骨子里藏不住深情款款，“假坏真善”最是青春时，愿每一个读完作品的多情少年莫负春光。 ———蔡崇达
 
@@ -46,7 +50,9 @@
 
 ### [人生灿灿](https://book.douban.com/subject/34865437/)
 ***短篇小说集**, 四川文艺出版社 – (2019-11 - ISBN: 9787541155109)*  
-<img decoding="async" src="./img/人生灿灿海报.jpg" width="20%">
+<img src="./img/人生灿灿海报.jpg" id="人生灿灿海报" style="width: 50%;">
+
+
 
 - 收录凉炘短篇小说十四篇，包括在“One·一个”App中高点击量与高赞的作品。一群有着不同年龄、阅历的底层小人物，他们拒绝向生命中的苦难屈服，选择了以自己的方式投入战斗，捍卫所爱。
 
@@ -59,7 +65,8 @@
 
 ### [春天简史](https://movie.douban.com/subject/35708474/)
 ***编剧，主演**, 导演 郭无用  (2020 - 短片)*  
-<img decoding="async" src="./img/春天简史海报.webp" width="20%">
+<img src="./img/春天简史海报.webp" id="春天简史海报" style="width: 50%;">
+
 
 
 ### [你我皆凡人](./film/film.md)
@@ -80,3 +87,14 @@
 [🔗 抖音 - 赵纯想](https://v.douyin.com/r9A8Kxu/)
 
 [👾 私人微信](copy:zhaochunxiang1109)  
+
+
+
+<script>
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (!isMobile) {
+        document.getElementById('坏一坏海报').style.width = '20%';
+        document.getElementById('人生灿灿海报').style.width = '20%';
+        document.getElementById('春天简史海报').style.width = '20%';
+    }
+</script>
