@@ -13,9 +13,6 @@ const nextConfig = {
 
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
-  use:[ 
-  'babel-loader',
-  '@mdx-js/loader',],
   options: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [rehypePrism],

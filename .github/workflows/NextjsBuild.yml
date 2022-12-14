@@ -18,17 +18,20 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 'lts/*'
-          cache: 'npm'
+          # update the Node version to meet your needs
+          node-version: 16
+          cache: npm
 
       - name: Build
         run: |
-          npm i
+          npm ci
           npm run build
           npm run export
+          touch out/.nojekyll
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@4.4.0
         with:
+          branch: gh-pages
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./out
