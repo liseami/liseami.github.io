@@ -9,6 +9,7 @@ on:
   push:
     branches:
       - main
+  page_build:
 
 jobs:
   build-and-deploy:
