@@ -1,38 +1,33 @@
-# Spotlight
+# 说明
 
-Spotlight is a [Tailwind UI](https://tailwindui.com) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
+这个网站构建于 [Tailwind CSS](https://tailwindcss.com) 和 [Next.js](https://nextjs.org).
 
-## Getting started
+## 如何运行在你的机器
 
-To get started with this template, first install the npm dependencies:
+先安装依赖
 
 ```bash
 npm install
 ```
-
-Next, create a `.env.local` file in the root of your project and set the `NEXT_PUBLIC_SITE_URL` variable to your site's public URL:
-
-```
-NEXT_PUBLIC_SITE_URL=https://example.com
-```
-
-Next, run the development server:
+然后cd到你的目录下
 
 ```bash
 npm run dev
 ```
 
-Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
+最后, 打开 [http://localhost:3000](http://localhost:3000)
 
-## Customizing
+改动代码，自动重新部署。
 
-You can start editing this template by modifying the files in the `/src` folder. The site will auto-update as you edit these files.
+## 自定义
 
-## License
+修改一些文件。看看会发生什么变化。
 
-This site template is a commercial product and is licensed under the [Tailwind UI license](https://tailwindui.com/license).
+## 版权
 
-## Learn more
+这个模版的版权归属于 [Tailwind UI license](https://tailwindui.com/license).
+
+## 需要了解的知识
 
 To learn more about the technologies used in this site template, see the following resources:
 
