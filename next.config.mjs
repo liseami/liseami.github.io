@@ -11,6 +11,7 @@ const nextConfig = {
   },
 }
 
+
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
   options: {
