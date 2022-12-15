@@ -1,9 +1,10 @@
-// next.config.js
-const isProd = process.env.NODE_ENV === 'production'
+// @ts-check
 
-module.exports = {
-  assetPrefix: isProd ? '/main/' : '',
-  images: {
-    unoptimized: true,
-  },
+/**
+ * @type {import('next').NextConfig}
+ **/
+const nextConfig = {
+  basePath: '/gh-pages',
 }
+
+module.exports = nextConfig
