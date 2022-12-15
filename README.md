@@ -29,9 +29,7 @@ npm run dev
 
 ## 需要了解的知识
 
-To learn more about the technologies used in this site template, see the following resources:
-
-- [Tailwind CSS](https://tailwindcss.com/docs) - the official Tailwind CSS documentation
-- [Next.js](https://nextjs.org/docs) - the official Next.js documentation
-- [Headless UI](https://headlessui.dev) - the official Headless UI documentation
-- [MDX](https://mdxjs.com) - the MDX documentation
+- [Tailwind CSS](https://tailwindcss.com/docs) - TailWindCss 官方文档
+- [Next.js](https://nextjs.org/docs) - Next.js官方文档
+- [Headless UI](https://headlessui.dev) - Headless UI官方文档
+- [MDX](https://mdxjs.com) -  MDX 文档
