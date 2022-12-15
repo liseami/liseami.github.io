@@ -29,10 +29,10 @@ export default function Uses() {
   return (
     <>
       <Head>
-        <title>Uses - Spencer Sharp</title>
+        <title>更多 - 自用分享</title>
         <meta
-          name="description"
-          content="Software I use, gadgets I love, and other things I recommend."
+          name="更多"
+          content="自用分享。"
         />
       </Head>
       <SimpleLayout
