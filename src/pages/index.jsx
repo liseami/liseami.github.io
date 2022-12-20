@@ -11,6 +11,7 @@ import {
   TwitterIcon,
   InstagramIcon,
   GitHubIcon,
+  BiliBiliIcon,
   LinkedInIcon,
 } from '@/components/SocialIcons'
 
@@ -316,19 +317,30 @@ export default function Home({ articles }) {
             赵纯想个人网站
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            写一些小说、代码和剧本。纯想理心社发起人。
+            写一些小说、代码和剧本。<Link href="/about" className="text-emerald-600">纯想理心社</Link>发起人。
             过去在
             <Link href="https://www.haoshuo.com/" className="text-emerald-600">好说</Link>,
             <Link href="https://www.newtouch.com//" className="text-emerald-600">新致软件</Link>。
-            现在是一名独立开发者，居无定所，录制课程，拍摄抖音。偶尔写写小说和剧本。代码方面，
-            目前在构建一系列开放性的产品，比如<Link href="https://www.revome.cn" className="text-emerald-600">RevomeWeb3房地产</Link>。
-            
+            现在是一名独立开发者，居无定所，录制课程和视频。
+            <Link href="/speaking" className="text-emerald-600">点击这里</Link>
+            可以找到我录制的iOS开发课程。文学方面，出版作品有
+            <Link href="https://book.douban.com/subject/26990080/" className="text-emerald-600">《坏一坏》</Link>、
+            <Link href="https://book.douban.com/subject/34865437/" className="text-emerald-600">《人生灿灿》</Link>，另外，有几篇
+            <Link href="/articles" className="text-emerald-600">本站可阅读的文章</Link>。技术方面，
+            目前在畅想和构建一系列开放性的产品，比如<Link href="https://www.revome.cn" className="text-emerald-600">Revome | Web3房地产项目</Link>。
+            另外，如果你对这个网站的实现方式感兴趣：它使用
+            <Link href="https://nextjs.org/" className="text-emerald-600">Next.js</Link>、
+            <Link href="https://reactjs.org/" className="text-emerald-600">React</Link>搭建，
+            也使用了基于
+            <Link href="https://tailwindcss.com/" className="text-emerald-600">TailwindCSS</Link>的模版。在下方的Github连接中，
+            你也可以找到源码。
+
           </p>
           {/* 联系方式连接 */}
           <SocialLinks />
         </div>
         {/* 产品 */}
-        <ProjectList/>
+        <ProjectList />
         {/* <Products /> */}
       </Container>
       {/* 文章 */}
@@ -354,9 +366,10 @@ function SocialLinks() {
     <div className="mt-6 flex gap-6">
       <SocialLink
         href="https://v.douyin.com/hfLkMQV/"
-        aria-label="Follow on Twitter"
+        aria-label="Follow on 抖音"
         icon={TikTokIcon}
       />
+      <Link href="https://space.bilibili.com/26317883/" className="text-emerald-600">Bilibili主页</Link>
       <SocialLink
         href="https://github.com/liseami"
         aria-label="Follow on GitHub"
