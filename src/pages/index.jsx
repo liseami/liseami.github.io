@@ -334,8 +334,11 @@ export default function Home({ articles }) {
             也使用了基于
             <Link href="https://tailwindcss.com/" className="text-emerald-600">TailwindCSS</Link>的模版。在下方的Github连接中，
             你也可以找到源码。
-
+            <br></br>
+            <br></br>
+            我正在为最新的创业项目招募技术合作伙伴，如你对感兴趣，尽快联系我。不限于iOS，安卓，Java，python和react。请用邮箱与我联系，并附带简历。liseami@qq.com
           </p>
+
           {/* 联系方式连接 */}
           <SocialLinks />
         </div>
