@@ -8,11 +8,7 @@ import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
   TikTokIcon,
-  TwitterIcon,
-  InstagramIcon,
   GitHubIcon,
-  BiliBiliIcon,
-  LinkedInIcon,
 } from '@/components/SocialIcons'
 
 import logoAirbnb from '@/images/logos/airbnb.svg'
@@ -302,6 +298,7 @@ function Photos() {
 export default function Home({ articles }) {
   return (
     <>
+    
       <Head>
         <title>
           赵纯想个人网站 - 产品，课程，文学和博客
@@ -317,7 +314,7 @@ export default function Home({ articles }) {
             赵纯想个人网站
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            写一些小说、代码和剧本。<Link href="/about" className="text-emerald-600">纯想理心社</Link>发起人。
+            写小说、代码和剧本。<Link href="/about" className="text-emerald-600">纯想理心社</Link>发起人。
             过去在
             <Link href="https://www.haoshuo.com/" className="text-emerald-600">好说</Link>,
             <Link href="https://www.newtouch.com//" className="text-emerald-600">新致软件</Link>。
