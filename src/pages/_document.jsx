@@ -34,6 +34,22 @@ const modeScript = `
     updateMode()
   }
 `
+const googletrack =   `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-8F7LE48X67');
+`
+
+const baidutrack =  `
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?dc0aec19b9e46cf3a88f1b2b030425f4";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+`
 
 export default function Document() {
   return (
@@ -52,36 +68,18 @@ export default function Document() {
         />
         {/* Google tag (gtag.js) */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-8F7LE48X67"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
+        <script dangerouslySetInnerHTML={{ __html: googletrack }} />
+        <script dangerouslySetInnerHTML={{ __html: baidutrack }} />
 
-                gtag('config', 'G-8F7LE48X67');
-              `,
-          }}
-        />
-        <script>
-        track()
-        </script>
       </Head>
       <body className="flex h-full flex-col bg-zinc-50 dark:bg-black">
         <Main />
+        
         <NextScript />
+
       </body>
     </Html>
   )
 }
 
 
-function track() {
-  var _hmt = _hmt || [];
-  (function () {
-    var hm = document.createElement("script");
-    hm.src = "https://hm.baidu.com/hm.js?e03965f35b9751fb5d8eba4d0c2da9e1";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-  })();
-}

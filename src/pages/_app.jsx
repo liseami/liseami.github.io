@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-
+import TagManager from 'react-gtm-module'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 
@@ -11,6 +11,7 @@ function usePrevious(value) {
 
   useEffect(() => {
     ref.current = value
+    TagManager.initialize({gtmId : 'G-8F7LE48X67' });
   }, [value])
 
   return ref.current
