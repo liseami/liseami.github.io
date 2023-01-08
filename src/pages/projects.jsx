@@ -15,7 +15,7 @@ const projects = [
     name: '转山 - 公测中',
     description:
       '个人行为习惯管理软件.',
-    link: { href: '#', label: '点击加入公测' },
+    link: { href: 'https://apps.apple.com/app/6444640823)', label: '点击加入公测' },
     logo: lifelooplogo,
   },
   {
