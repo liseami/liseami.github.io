@@ -314,7 +314,7 @@ export default function Home({ articles }) {
             赵纯想个人网站
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            写小说、代码和剧本。<Link href="/about" className="text-emerald-600">纯想理心社</Link>发起人。
+            写小说、代码和剧本。<Link href="https://apps.apple.com/cn/app/%E8%BD%AC%E5%B1%B1-%E8%A1%8C%E4%B8%BA%E4%B9%A0%E6%83%AF%E5%A1%91%E9%80%A0/id6444640823" className="text-emerald-600">转山App</Link>开发者。
             过去在
             <Link href="https://www.haoshuo.com/" className="text-emerald-600">好说</Link>,
             <Link href="https://www.newtouch.com//" className="text-emerald-600">新致软件</Link>。
