@@ -56,6 +56,15 @@ export default function Speaking() {
               cta="去B站看视频"
             />
           </SpeakingSection>
+          <SpeakingSection title="SwfitUI-进阶课">
+            <Appearance
+              href="course/courseDocHttpRequest"
+              title="进阶课·Http请求"
+              description="HTTP请求是网络编程中常用的一种方式，它可以帮助我们与网络上的服务器进行交互。在Swift语言中，我们可以使用系统提供的URLSession类来发起HTTP请求。"
+              event="最新录制 2022 - 持续更新"
+              cta="进阶课"
+            />
+          </SpeakingSection>
           {/* <SpeakingSection title="Podcasts">
             <Appearance
               href="#"

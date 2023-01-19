@@ -1,0 +1,129 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const meta = {
+  author: 'Adam Wathan',
+  date: '2022-09-02',
+  title: '进阶课程（1）Http请求',
+  description:
+    'Swift中的Http请求',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+——————————————————————————————
+
+## **HTTP介绍**
+
+HTTP (Hypertext Transfer Protocol) 是一种用于在网络上传输超文本的协议。它是万维网 (WWW) 上数据传输的基础。
+
+HTTP协议是基于请求/响应模型的，意味着客户端向服务器发送请求，服务器返回响应。
+
+在HTTP协议中，请求和响应都由消息组成，消息由三部分组成：
+
+**请求/响应行**:包含请求方法（如**GET**，**POST**）、请求URL和协议版本。
+
+**消息头**:包含有关请求/响应的附加信息，如请求日期、请求者的IP地址、内容长度等。
+
+**消息正文**:包含请求/响应的数据。
+
+常用的请求方法有：
+
+GET:请求获取指定的信息。
+
+POST:向服务器发送数据，请求服务器进行处理。
+
+PUT:向指定的资源位置上传其最新内容。
+
+DELETE:请求服务器删除指定的资源。
+
+HTTP协议还支持状态码，用于表示请求/响应的结果。常用的状态码有：
+
+
+200 OK:请求成功。
+
+201 Created:请求已经被服务器接受，并且已经成功创建。
+
+204 No Content:请求已经被服务器接受，但是服务
+
+
+## **Swfit中的HTTP请求**
+在Swift语言中，我们可以使用系统提供的URLSession类来发起HTTP请求。
+
+首先，我们需要创建一个URLSession对象，这个对象可以帮助我们创建请求并发送请求。
+
+```swift
+let session = URLSession.shared
+```
+
+然后，我们需要创建一个URLRequest对象，并设置请求的相关信息，如请求地址、请求方法、请求头等。
+
+```swift
+var request = URLRequest(url: URL(string: "https://www.example.com")!)
+request.httpMethod = "GET"
+request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+```
+
+接下来，我们可以使用URLSession的dataTask方法来发起请求。这个方法需要传入两个参数：URLRequest对象和一个回调闭包，在请求完成后会回调这个闭包，并将请求结果作为参数传入。
+
+```swift
+session.dataTask(with: request) { (data, response, error) in
+    if let error = error {
+        print("请求失败：\(error)")
+    } else {
+        print("请求成功！")
+    }
+}.resume()
+```
+
+## **HTTP请求练习**
+
+接口大全
+
+https://www.free-api.com/
+
+面向开发人员的免费公共 API
+
+https://rapidapi.com/collection/list-of-free-apis
+
+
+课堂练习API，食物卡路里：
+https://www.free-api.com/doc/589
+
+流量监控：
+https://proxyman.io/
+
+## **URL编码解码**
+
+https://tool.chinaz.com/tools/urlencode.aspx
+
+## **JSON介绍**
+
+
+JSON (JavaScript Object Notation) 是一种轻量级的数据交换格式，它使用类似于 JavaScript 对象的语法来表示数据。它可以在不同的编程语言之间进行交换数据，比如 Swift 和 JavaScript。
+
+JSON 的基本结构是一个键值对的集合，键值对之间使用逗号分隔，整个集合使用大括号包围。键是字符串，值可以是字符串、数字、布尔值、数组或者另一个 JSON 对象。
+
+示例:
+
+```JSON
+{
+    "name": "John Smith",
+    "age": 30,
+    "address": {
+        "street": "123 Main St",
+        "city": "Springfield",
+        "state": "IL"
+    },
+    "phoneNumbers": [
+        {
+            "type": "home",
+            "number": "555-555-5555"
+        },
+        {
+            "type": "work",
+            "number": "555-555-5556"
+        }
+    ]
+}
+```
+
