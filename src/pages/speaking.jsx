@@ -106,6 +106,13 @@ export default function Speaking() {
               event="最新录制 2022 - 持续更新"
               cta="查看文档"
             />
+            <Appearance
+              href="course/uikit"
+              title="7-巨人肩膀之桥接UIKit"
+              description="给开发者发送邮件。"
+              event="最新录制 2022 - 持续更新"
+              cta="查看文档"
+            />
             
           </SpeakingSection>
           {/* <SpeakingSection title="Podcasts">

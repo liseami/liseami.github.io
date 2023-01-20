@@ -92,7 +92,26 @@ LottieView(
 
 在 SwiftUI 中使用友盟 SDK 分析用户日活，需要在 AppDelegate 中集成友盟 SDK 并在合适的位置调用友盟 SDK 的统计功能。
 
-1.在 AppDelegate 中引入友盟 SDK：
+
+
+# 在 SwiftUI 项目中使用 Objective-C SDK
+
+步骤如下：
+
+1. 在 Xcode 中打开你的 SwiftUI 项目。
+2. 在 Xcode 中的 "File" 菜单中选择 "New" > "File"。
+3. 在弹出的对话框中，选择 "Objective-C File"。
+4. 在 "File Type" 选项中，选择 "Empty"。
+5. 点击 "Next" 按钮。
+6. 为新文件命名，如 "MyBridgeHeader"。
+7. 点击 "Create" 按钮。
+8. 在新创建的文件中，导入需要使用的 Objective-C SDK。
+9. 在项目的 Build Settings 中，找到 "Objective-C Bridging Header" 选项。
+10. 在 "Objective-C Bridging Header" 的值中输入刚刚创建的文件名，如 "MyBridgeHeader.h"。
+11. 在你的 Swift 代码中引用 Objective-C SDK 中的类和方法即可使用。
+
+
+1.引入友盟 SDK：
 ```swift
 import UMCommon
 ```

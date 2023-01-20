@@ -1,0 +1,86 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { inlineCode } from '@mdx-js/react'
+
+export const meta = {
+  author: 'Zhao Chunxiang',
+  date: '2023-01-22',
+  title: '进阶课程（7）巨人肩膀之桥接UIKit',
+  description: '开源软件包的寻找与使用',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+## **在SwiftUI中使用UIkit中的邮件发送器**
+
+
+SwiftUI和UIKit是两种不同的界面框架，它们之间没有直接的互相调用方法。如果您想在SwiftUI中使用UIKit中的视图，可以使用UIViewRepresentable协议将UIKit视图包装成SwiftUI视图，然后在SwiftUI界面中使用。
+
+下面是一个示例，展示了如何使用UIViewRepresentable协议在SwiftUI中使用UIKit中的MFMailComposeViewController视图：
+
+```swift
+struct SendMailView: UIViewControllerRepresentable {
+    func makeCoordinator() -> Coordinator {
+        Coordinator()
+    }
+    func makeUIViewController(context: Context) -> MFMailComposeViewController {
+        let vc = MFMailComposeViewController()
+        vc.mailComposeDelegate = context.coordinator
+        // Configure the email content here
+        vc.setSubject("⛰️⛰️⛰️转山意见反馈")
+        vc.setMessageBody("在分割线下方，写下你遇到的问题，提出你宝贵的意见（请勿修改统一标题，否则可能无法及时查看到）！\r ———————分割线————————", isHTML: false)
+        // Set the recipient.
+        vc.setToRecipients(["liseami@qq.com", "zhaoxiangyuliseami@gmail.com", "504083897@qq.com"])
+        return vc
+    }
+}
+```
+
+
+## **在SwiftUI中使用UIkit框架中的照片选择器**
+
+```swift
+struct SinglePhotoSelector: UIViewControllerRepresentable {
+    var image: UIImage?
+    var completionHandler: ((UIImage?) -> Void)?
+    init(image: UIImage? = nil, completionHandler: ((UIImage?) -> Void)?){
+        self.image = image
+        self.completionHandler = completionHandler
+    }
+
+    func makeUIViewController(context: Context) -> UIViewController {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = context.coordinator
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        return imagePicker
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
+
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(self)
+    }
+
+    class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+        var parent: SinglePhotoSelector
+
+        init(_ parent: SinglePhotoSelector) {
+            self.parent = parent
+        }
+
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+            if let selectedImage = info[.editedImage] as? UIImage {
+                parent.image = selectedImage
+            }
+
+            // Call the completionHandler and pass the selected image
+            parent.completionHandler?(parent.image)
+
+            picker.dismiss(animated: true)
+        }
+    }
+}
+```
+
+注意：在使用UIActivityViewController时，
+您需要在info.plist中添加一个键为“Privacy - Photo Library Usage Description”的字符串来获取相册的访问权限
