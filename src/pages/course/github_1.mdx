@@ -1,0 +1,87 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const meta = {
+  author: '赵纯想',
+  date: '2023-01-19',
+  title: '加入课程开源项目',
+  description:
+    '加入课程开源项目',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+——————————————————————————————
+
+## **Git介绍**
+
+Git是一个版本控制系统，可以记录文件和文件夹的更改历史，并允许多人协作开发项目。
+
+要使用Git，首先需要安装它。然后，可以在命令行中运行 git init 命令来初始化一个新项目的版本库。接下来，可以使用 git add 命令将文件添加到缓存区，然后使用 git commit 命令将文件的更改永久地提交到版本库中。
+
+其他常用的Git命令包括：
+
+git status：查看当前项目的状态
+
+git log：查看项目的提交历史
+
+git diff：查看文件的差异
+
+git branch：查看和管理分支
+
+git merge：合并分支
+
+git pull/push：从/向远程仓库拉取/推送更改
+
+Git也可以与远程仓库配合使用，如GitHub、GitLab等，可以方便的管理代码和协作开发。
+
+
+## **Git安装**
+
+使用 Homebrew：Homebrew 是 Mac 上最流行的包管理器之一，可以使用它来安装 Git。打开终端，输入 brew install git 并回车，就可以在几分钟内完成安装。
+
+下载安装包：可以从 Git 官网上下载 Mac 版本的安装包并进行安装。下载地址：https://git-scm.com/downloads
+
+使用 xcode-select 安装：在终端中输入 xcode-select --install 命令，就可以安装 Git。
+
+## **Homebrew安装**
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/main/install.sh)"
+```
+输入 brew install git 并回车，就可以在几分钟内完成Git的安装。
+
+## **使用Git**
+
+
+配置用户名和邮箱
+在终端中输入以下命令:
+
+```bash
+$ git config --global user.name "Your Name"
+$ git config --global user.email "your_email@example.com"
+```
+
+初始化本地仓库
+
+```bash
+$ git init
+```
+
+添加文件
+```bash
+$ git add .
+```
+
+提交文件
+```bash
+$ git commit -m "Initial commit"
+```
+
+连接远程仓库
+```bash
+$ git remote add origin https://github.com/username/repo.git
+```
+
+推送文件
+```bash
+$ git push -u origin master
+```

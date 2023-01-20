@@ -1,0 +1,86 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const meta = {
+  author: 'Zhao Chunxiang',
+  date: '2023-01-20',
+  title: '进阶课程（2）JSON解析与页面渲染',
+  description:
+    'JSON解析与页面渲染',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+——————————————————————————————
+## **使用流量监控工具监控我们的请求**
+
+https://proxyman.io/
+
+
+## **对URL中的中文字符串进行编码**
+
+在 Swift 中可以使用 URLEncoding.queryString 或 URLEncoding.default 来对 URL 中的中文进行编码。
+
+示例代码如下：
+
+```swift
+let originalString = "https://www.example.com/中文字符"
+let encodedString = originalString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+print(encodedString)
+```
+
+或者
+
+```swift
+let originalString = "https://www.example.com/中文字符"
+let encodedString = originalString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+print(encodedString)
+```
+
+
+## **解析JSON**
+
+使用swift中的JSONDecoder 进行解析，示例如下:
+```swift
+struct User: Codable {
+    let name: String
+    let age: Int
+}
+
+let jsonString = "{\"name\":\"John\",\"age\":25}"
+let jsonData = jsonString.data(using: .utf8)
+let user = try! JSONDecoder().decode(User.self, from: jsonData!)
+```
+
+对于多层模型嵌套的数据：
+
+```swift
+struct Response: Codable {
+    let code: Int
+    let msg: String
+    let data: Data
+}
+
+struct Data: Codable {
+    let page: Int
+    let totalCount: Int
+    let totalPage: Int
+    let limit: Int
+    let list: [Food]
+}
+
+struct Food: Codable {
+    let foodId: String
+    let name: String
+    let healthLevel: Int
+    let calory: String
+}
+
+let jsonData = """
+{"code":1,"msg":"数据返回成功！","data":{"page":1,"totalCount":2136,"totalPage":214,"limit":10,"list":[{"foodId":"5a4aa4442b9f5d97","name":"苹果","healthLevel":1,"calory":"53.0"},{"foodId":"d3607294c2a363fc","name":"苹果蕉","healthLevel":1,"calory":"90.0"},{"foodId":"14ead7edd07f9bbf","name":"木苹果","healthLevel":2,"calory":"134.0"},{"foodId":"78bc5e0d00229c70","name":"星苹果","healthLevel":1,"calory":"67.2"},{"foodId":"1c42e2dc1eaec59b","name":"苹果汁","healthLevel":2,"calory":"23.0"},{"foodId":"da7e701ff97310ce","name":"苹果梨","healthLevel":1,"calory":"53.0"},{"foodId":"b2d252e6742cf803","name":"伏苹果","healthLevel":1,"calory":"48.0"},{"foodId":"2a70671f6545f378","name":"蒸苹果","healthLevel":1,"calory":"35.33"},{"foodId":"15348968ec01a233","name":"青苹果","healthLevel":1,"calory":"49.0"},{"foodId":"8c79ca0b45f28f8a","name":"旱苹果","healthLevel":1,"calory":"34.0"}]}}
+"""
+let jsonData = jsonData.data(using: .utf8)!
+let decoder = JSONDecoder()
+let response = try decoder.decode(Response.self, from: jsonData)
+print(response.data)
+```
+
