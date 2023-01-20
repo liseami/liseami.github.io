@@ -1,8 +1,10 @@
 import Head from 'next/head'
 
+import CopyButton from '@/components/CopyBtn'
 import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
 import { SimpleLayout } from '@/components/SimpleLayout'
+import Link from 'next/link'
 
 function SpeakingSection({ children, ...props }) {
   return (
@@ -32,14 +34,15 @@ export default function Speaking() {
         <title>课程 - 课程报名</title>
         <meta
           name="课程报名"
-          content="我录制了iOS开发课程，帮助人们了解到他们从计算机白痴到写出自己的第一个App究竟有多快！"
+          content="赵纯想出品 - iOS开发课程（购前可微信zhaochunxiang1109咨询）"
         />
       </Head>
       <SimpleLayout
-        title="我录制了iOS开发课程，帮助人们了解到他们从计算机白痴到写出自己的第一个App究竟有多快！"
+        title="赵纯想出品 - iOS开发课程"
         intro="这个网站有些严肃？千万别这样想.我制作的技术入门课，被称为全网第一单口相声课程。技术的传播方式应该轻松+愉悦，这种似乎非传统非严肃的口吻，恰恰是我设置的一个愉悦门槛。如果你不能在我的课程中感到愉悦，那么意味着在未来编程的过程中，你也很难感到愉悦了。"
       >
         <div className="space-y-20">
+        <CopyButton content='zhaochunxiang1109' btntitle='组合购买有优惠，购前请点击复制微信号咨询' />
           <SpeakingSection title="SwfitUI-入门课">
             <Appearance
               href="https://www.cctalk.com/m/group/90565680"

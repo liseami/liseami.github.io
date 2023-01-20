@@ -2,13 +2,16 @@ import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
 import clsx from 'clsx'
-
+import CopyButton from '@/components/CopyBtn'
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
   TikTokIcon,
   GitHubIcon,
+  TwitterIcon,
+  BiliBiliIcon
+
 } from '@/components/SocialIcons'
 
 import logoAirbnb from '@/images/logos/airbnb.svg'
@@ -157,34 +160,34 @@ function SocialLink({ icon: Icon, ...props }) {
   )
 }
 
-// function Newsletter() {
-//   return (
-//     <form
-//       action="/thank-you"
-//       className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
-//     >
-//       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-//         <MailIcon className="h-6 w-6 flex-none" />
-//         <span className="ml-3">Stay up to date</span>
-//       </h2>
-//       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-//         Get notified when I publish something new, and unsubscribe at any time.
-//       </p>
-//       <div className="mt-6 flex">
-//         <input
-//           type="email"
-//           placeholder="Email address"
-//           aria-label="Email address"
-//           required
-//           className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-//         />
-//         <Button type="submit" className="ml-4 flex-none">
-//           Join
-//         </Button>
-//       </div>
-//     </form>
-//   )
-// }
+function Newsletter() {
+  return (
+    <form
+      action="/thank-you"
+      className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
+    >
+      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+        <MailIcon className="h-6 w-6 flex-none" />
+        <span className="ml-3">Stay up to date</span>
+      </h2>
+      <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+        Get notified when I publish something new, and unsubscribe at any time.
+      </p>
+      <div className="mt-6 flex">
+        <input
+          type="email"
+          placeholder="Email address"
+          aria-label="Email address"
+          required
+          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
+        />
+        <Button type="submit" className="ml-4 flex-none">
+          Join
+        </Button>
+      </div>
+    </form>
+  )
+}
 
 function Resume() {
   let resume = [
@@ -298,7 +301,7 @@ function Photos() {
 export default function Home({ articles }) {
   return (
     <>
-    
+
       <Head>
         <title>
           赵纯想个人网站 - 产品，课程，文学和博客
@@ -313,7 +316,13 @@ export default function Home({ articles }) {
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             赵纯想个人网站
           </h1>
+
+          {/* 联系方式连接 */}
+          <SocialLinks />
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+            这是我的<CopyButton content="zhaochunxiang1109" btntitle='私人微信' className="text-emerald-600" />，注明来意。
+          <br></br>
+          <br></br>
             写小说、代码和剧本。<Link href="https://apps.apple.com/cn/app/%E8%BD%AC%E5%B1%B1-%E8%A1%8C%E4%B8%BA%E4%B9%A0%E6%83%AF%E5%A1%91%E9%80%A0/id6444640823" className="text-emerald-600">转山App</Link>开发者。
             过去在
             <Link href="https://www.haoshuo.com/" className="text-emerald-600">好说</Link>,
@@ -335,9 +344,6 @@ export default function Home({ articles }) {
             <br></br>
             我正在为最新的创业项目招募技术合作伙伴，如你对感兴趣，尽快联系我。不限于iOS，安卓，Java，python和react。请用邮箱与我联系，并附带简历。liseami@qq.com
           </p>
-
-          {/* 联系方式连接 */}
-          <SocialLinks />
         </div>
         {/* 产品 */}
         <ProjectList />
@@ -369,11 +375,20 @@ function SocialLinks() {
         aria-label="Follow on 抖音"
         icon={TikTokIcon}
       />
-      <Link href="https://space.bilibili.com/26317883/" className="text-emerald-600">Bilibili主页</Link>
+      <SocialLink
+        href="https://space.bilibili.com/26317883/"
+        aria-label="Follow on Bilibili"
+        icon={BiliBiliIcon}
+      />
       <SocialLink
         href="https://github.com/liseami"
         aria-label="Follow on GitHub"
         icon={GitHubIcon}
+      />
+      <SocialLink
+        href="https://twitter.com/liseami1"
+        aria-label="Follow on Twitter"
+        icon={TwitterIcon}
       />
     </div>
   )
