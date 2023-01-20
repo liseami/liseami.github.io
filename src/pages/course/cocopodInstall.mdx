@@ -1,0 +1,99 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const meta = {
+  author: 'Zhao Chunxiang',
+  date: '2023-01-21',
+  title: '进阶课程（3）CocoPods介绍与安装',
+  description:
+    'JSON解析与页面渲染',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+## **先在Mac上安装Ruby环境**
+
+首先，打开终端。
+
+然后输入以下命令来检查当前系统上是否已经安装了Ruby：
+
+```bash
+ruby -v
+```
+
+如果已经安装了，会显示当前安装的版本号。
+
+如果没有安装Ruby，可以使用Homebrew进行安装。
+
+[含有Homebrew安装方法的文章《重要：加入课程开源项目》](/course/github_1)
+
+使用Homebrew安装Ruby，输入命令：
+
+```bash
+brew install ruby
+```
+
+安装完成后，再次输入 
+
+```bash
+ruby -v 
+```
+
+会显示当前安装的版本号。
+
+如果要升级Ruby版本，可以使用
+
+```bash
+brew upgrade ruby
+```
+
+来完成。
+
+
+
+## **安装Cocopods**
+
+```bash
+sudo gem install cocoapods
+```
+
+这将在您的计算机上安装CocoaPods。
+
+
+## **使用CocoaPods向Xcode项目安装软件包的步骤**
+
+创建或打开一个Xcode项目。
+
+在终端中使用cd + 拖拽文件夹的方式，进入到项目目录下，输入：
+
+```bash
+pod init 
+```
+
+这将在您的项目目录中创建一个名为“Podfile”的文件。
+使用编辑器打开Podfile，在其中添加您需要使用的第三方库和框架。例如：
+
+```
+pod 'AFNetworking', '~> 3.0' 
+```
+
+这表示安装AFNetworking库，版本3.0及以上。
+
+保存Podfile。
+
+在终端中输入：
+
+```bash
+pod install 
+```
+
+这将安装您在Podfile中指定的所有依赖项。
+
+打开您的项目，从现在开始，您应该使用<b>.xcworkspaced</b>文件而不是.xcodeproj文件进行开发。
+
+在项目中使用软件包的时候，在需要的文件中导入即可，例如： 
+
+```
+#import <AFNetworking/AFNetworking.h> 
+```
+
+注意: 在Podfile文件中还可以配置项目的target，确定哪个target使用哪些库。

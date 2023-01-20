@@ -74,7 +74,35 @@ export default function Speaking() {
             <Appearance
               href="course/courseDocJSON"
               title="2-JSON解析与页面渲染"
-              description="HTTP请求是网络编程中常用的一种方式，它可以帮助我们与网络上的服务器进行交互。在Swift语言中，我们可以使用系统提供的URLSession类来发起HTTP请求。"
+              description="在 Swift 中可以使用 URLEncoding.queryString 或 URLEncoding.default 来对 URL 中的中文进行编码。"
+              event="最新录制 2022 - 持续更新"
+              cta="查看文档"
+            />
+            <Appearance
+              href="course/cocopodInstall"
+              title="3-CocoPods介绍与安装"
+              description="CocoaPods是一个用于iOS和macOS开发的依赖管理工具。它允许开发人员管理第三方库和框架的依赖关系，并将其集成到Xcode项目中。"
+              event="最新录制 2022 - 持续更新"
+              cta="查看文档"
+            />
+            <Appearance
+              href="course/networkTools"
+              title="4-网络请求核武器之纯想框架使用"
+              description="我长期使用的网络框架。"
+              event="最新录制 2022 - 持续更新"
+              cta="查看文档"
+            />
+            <Appearance
+              href="course/networkTiming"
+              title="5-数据请求时机"
+              description="如何利用SwiftUI特性请求网络数据。"
+              event="最新录制 2022 - 持续更新"
+              cta="查看文档"
+            />
+            <Appearance
+              href="course/useOpenSourcePackage"
+              title="6-开源软件包使用"
+              description="开源软件包使用。"
               event="最新录制 2022 - 持续更新"
               cta="查看文档"
             />

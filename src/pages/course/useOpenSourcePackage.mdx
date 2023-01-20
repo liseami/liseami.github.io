@@ -1,0 +1,107 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { inlineCode } from '@mdx-js/react'
+
+export const meta = {
+  author: 'Zhao Chunxiang',
+  date: '2023-01-22',
+  title: '进阶课程（6）开源软件包的寻找与使用',
+  description: '开源软件包的寻找与使用',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+## **寻找开源软件包**
+
+开源 iOS、iPadOS、watchOS 和 tvOS 应用程序的协作列表
+[https://github.com/dkhamsing/open-source-ios-apps](https://github.com/dkhamsing/open-source-ios-apps)
+
+[开源 iOS、iPadOS、watchOS 和 tvOS 应用程序的协作列表](https://github.com/dkhamsing/open-source-ios-apps)
+
+39 个用于 iOS 应用程序开发的开源 Swift UI 库
+这是一个“惊人的”系列开源项目。
+
+Swift 由 Apple Inc 开发，是目前 Github 上最流行的编程语言，它拥有最活跃的社区之一，热心地贡献他们的开源项目。
+
+开源库可能很不错，它们可以让您在构建 iOS 应用程序时变得更加轻松。对于那些花费数小时和数天寻找好的库的 iOS 用户，您可能会发现这篇文章很有用。
+
+## **使用 Lottie 包在 SwiftUI 中渲染动画**
+
+先用 Cocopods 添加一行新的依赖，然后在项目目录下运行
+
+```bash
+pod install
+```
+
+新建一个文件，把代码复制进去
+
+```swift
+
+import Lottie
+import SwiftUI
+
+struct LottieView: UIViewRepresentable {
+    // 声明文件名作为Lottie变量以便于重复使用
+    var lottieFliesName: String
+    var loopMode: LottieLoopMode
+    var speed: CGFloat = 1
+
+    typealias UIViewType = UIView
+    // 装载洛丽塔动画
+    // ——————————————————————————————————————————————————————————————————————————
+    func makeUIView(context _: UIViewRepresentableContext<LottieView>) -> UIView {
+        let view = UIView(frame: .zero)
+        let animationView = AnimationView()
+        let animation = Animation.named(lottieFliesName)
+        animationView.animation = animation
+        animationView.contentMode = .scaleAspectFit
+        animationView.play()
+        // 播放模式
+        animationView.loopMode = loopMode
+        // 播放速度
+        animationView.animationSpeed = speed
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(animationView)
+        NSLayoutConstraint.activate([
+            animationView.widthAnchor.constraint(equalTo: view.widthAnchor), animationView.heightAnchor.constraint(equalTo: view.heightAnchor),
+        ])
+        return view
+    }
+
+    //    —————————————————————————————————————————————————————————————————————
+    func updateUIView(_: UIView, context _: UIViewRepresentableContext<LottieView>) {}
+}
+
+```
+
+在https://lottiefiles.com/
+下载你喜欢的动画的 Json 文件
+
+然后在SwiftUI视图中使用LottieView渲染动画
+
+```swift
+LottieView(
+    lottieFliesName: "你下载json的文件名字，不需要带后缀", 
+    loopMode: .loop, 
+    speed: 1)
+
+```
+
+## **使用友盟SDK，分析你App的用户使用情况**
+
+百度搜索友盟，进入官网，创建应用，配置基本信息，阅读友盟文档
+
+在 SwiftUI 中使用友盟 SDK 分析用户日活，需要在 AppDelegate 中集成友盟 SDK 并在合适的位置调用友盟 SDK 的统计功能。
+
+1.在 AppDelegate 中引入友盟 SDK：
+```swift
+import UMCommon
+```
+
+2.在 application(_:didFinishLaunchingWithOptions:) 方法中配置友盟 SDK：
+
+```swift
+UMConfigure.initWithAppkey("友盟 AppKey", channel: "App Store")
+```
+
+
+

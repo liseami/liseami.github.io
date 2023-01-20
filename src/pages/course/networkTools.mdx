@@ -1,0 +1,156 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { inlineCode } from '@mdx-js/react'
+
+export const meta = {
+  author: 'Zhao Chunxiang',
+  date: '2023-01-22',
+  title: '进阶课程（4）网络请求核武器之纯想框架使用',
+  description:
+    '网络请求核武器之纯想框架使用',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+
+<a href="https://www.aliyundrive.com/s/VPSsMAfusTK" download="file.zip">下载赵纯想武器库</a>
+
+
+## **所依赖的库**
+
+```
+pod 'Moya'# 网络底层
+pod 'Moya/Combine', '~> 15.0'# 
+pod 'KakaJSON'# JSON处理
+pod 'SwiftyJSON'# JSON处理
+```
+
+## **文件夹结构**
+
+```bash
+.
+├── Apis 
+│   └── UserAPI.swift - 写Api子弹的地方
+├── Config
+│   ├── ApiConfig.swift  - Api总体配置的地方
+│   └── NetWorking.swift  - 请求方法函数
+├── Extension
+│   ├── MoyaProviderType+Extension.swift  - 扩展别动
+│   ├── MoyaResult+Extension.swift  - 扩展别动
+│   └── Response+Extension.swift  - 扩展别动
+└── Plugin
+    ├── NetworkLoggerPlugin.swift - 日志插件
+    ├── TokenPlugin.swift - Token插件别动
+    └── WarningPlugin.swift - 警告插件
+```
+
+
+## **TargetType协议介绍**
+
+```swift
+import Foundation
+
+public protocol TargetType {
+
+    /// 目标的基础`URL`。
+    var baseURL: URL { get }
+
+    /// 需要添加到`baseURL`上以形成完整`URL`的路径。
+    var path: String { get }
+
+    /// 请求中使用的HTTP方法。
+    var method: Moya.Method { get }
+
+    /// 提供测试中使用的桩数据。默认为`Data()`。
+    var sampleData: Data { get }
+
+    /// 要执行的HTTP任务的类型。
+    var task: Task { get }
+
+    /// 对请求执行的验证类型。默认为`ValidationType.none`。
+    var validationType: ValidationType { get }
+
+    /// 请求中使用的标头。
+    var headers: [String: String]? { get }
+}
+
+public extension TargetType {
+
+    /// 对请求执行的验证类型。默认为`ValidationType.none`。
+    var validationType: ValidationType { .none }
+
+    /// 提供测试中使用的桩数据。默认为`Data()`。
+    var sampleData: Data { Data() }
+}
+```
+
+
+## **满足TargetType协议**
+
+这些是每个子弹都不相同的信息
+```swift
+import Foundation
+import Moya
+
+public typealias HTTPRequestMethod = Moya.Method
+
+public protocol FantasyTargetType: TargetType {
+    var parameters: [String: Any]? { get }
+    var parameterEncoding: ParameterEncoding { get }
+    var group: String { get }
+}
+
+```
+
+
+这些是每个子弹都相同的基础信息，只需要设置一次 通常与项目有关
+```swift
+
+public extension FantasyTargetType {
+    var baseURL: URL {
+        URL(string: AppConfig.baseUrl)?.appendingPathComponent(group) ?? URL(string: "https://test.com")!
+    }
+    
+    var path: String {
+        let path = String(describing: self)
+        return "/" + path.components(separatedBy: "(").first!
+    }
+
+    var group: String { "" }
+
+    var sampleData: Data {
+        "".data(using: String.Encoding.utf8)!
+    }
+
+    var task: Task {
+        switch method {
+        case .get:
+            if let parameters = parameters {
+                return .requestParameters(parameters: parameters, encoding: parameterEncoding)
+            }
+            return .requestPlain
+        case .post, .put, .delete:
+            return .requestParameters(parameters: parameters ?? [:], encoding: parameterEncoding)
+
+        default:
+            return .requestPlain
+        }
+    }
+
+    var parameters: [String: Any]? { nil }
+
+    var parameterEncoding: ParameterEncoding {
+        switch method {
+        case .get: return URLEncoding.default
+        default: return JSONEncoding.default
+        }
+    }
+
+    // Token in Header...
+    var headers: [String: String]? {
+        var headers: [String: String] = [:]
+        headers["x-lc-session"] = UserManager.shared.accessToken
+        return headers
+    }
+}
+
+```

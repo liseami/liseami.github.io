@@ -1,0 +1,68 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { inlineCode } from '@mdx-js/react'
+
+export const meta = {
+  author: 'Zhao Chunxiang',
+  date: '2023-01-24',
+  title: '进阶课程（5）SwiftUI中的网络请求时机',
+  description: 'SwiftUI中的网络请求时机',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+## **三种网络请求时机**
+
+### **一、 onAppear()视图方法**
+
+在 SwiftUI 中，您可以使用 onAppear()或 onChange()方法在页面渲染时请求网络数据。
+
+onAppear():在视图出现在屏幕上时调用。
+
+```swift
+struct ContentView: View {
+    @State private var data: Data = Data()
+
+    var body: some View {
+        VStack {
+            Text("Data: \(data)")
+        }
+        .onAppear {
+            self.loadData()
+        }
+    }
+}
+```
+
+### **二、 task 视图方法**
+
+在 SwiftUI 中，您可以使用 task()方法在页面渲染时请求网络数据。
+
+task()方法允许您在页面渲染时执行异步任务，并在任务完成时更新视图。
+
+```swift
+struct ContentView: View {
+    @State private var data: Data = Data()
+
+    var body: some View {
+        VStack {
+            Text("Data: \(data)")
+        }
+        .task {
+            self.loadData()
+        }
+    }
+}
+```
+
+### **三、 在 View 监听的 ViewModel 的 init 方法中**
+
+在 SwiftUI 中，您可以在视图管理者的 init()方法中请求数据
+
+```swift
+class SomeViewModel: ObservableObject {
+    @Published var data: Data = Data()
+    init() {
+        loadData()
+    }
+}
+```
