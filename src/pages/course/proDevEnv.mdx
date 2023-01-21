@@ -1,0 +1,57 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { inlineCode } from '@mdx-js/react'
+
+export const meta = {
+  author: 'Zhao Chunxiang',
+  date: '2023-01-22',
+  title: '准备：专业开发环境搭建',
+  description: '专业开发环境搭建',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+## **安装oh-my-zsh**
+Oh My Zsh 是一个令人愉快的、开源的、社区驱动的框架，用于管理你的 Zsh 配置。它捆绑了数以千计的有用功能、助手、插件、主题和一些让你大喊大叫的东西……
+
+https://ohmyz.sh/
+
+
+安装 oh-my-zsh，
+使用命令：
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+重启终端。
+
+切换默认 shell 为 zsh，使用命令：
+```bash
+chsh -s $(which zsh)
+```
+
+重启终端。
+
+
+## **安装Homebrew**
+
+使用 Homebrew 安装 Apple（或您的 Linux 系统）没有预装但 你需要的东西。
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/main/install.sh)"
+```
+
+## **Git安装**
+
+使用 Homebrew：Homebrew 是 Mac 上最流行的包管理器之一，可以使用它来安装 Git。打开终端，输入 
+```bash
+brew install git 
+```
+并回车，就可以在几分钟内完成安装。
+
+下载安装包：可以从 Git 官网上下载 Mac 版本的安装包并进行安装。下载地址：https://git-scm.com/downloads
+
+使用 xcode-select 安装：在终端中输入 xcode-select --install 命令，就可以安装 Git。
+
+
+##  **Git桌面版安装**
+
+https://desktop.github.com/

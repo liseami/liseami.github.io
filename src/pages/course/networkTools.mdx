@@ -5,21 +5,20 @@ export const meta = {
   author: 'Zhao Chunxiang',
   date: '2023-01-22',
   title: '进阶课程（4）网络请求核武器之纯想框架使用',
-  description:
-    '网络请求核武器之纯想框架使用',
+  description: '网络请求核武器之纯想框架使用',
 }
 
 export default (props) => <ArticleLayout meta={meta} {...props} />
 
-
-<a href="https://www.aliyundrive.com/s/VPSsMAfusTK" download="file.zip">下载赵纯想武器库</a>
-
+<a href="https://www.aliyundrive.com/s/VPSsMAfusTK" download="file.zip">
+  下载赵纯想武器库
+</a>
 
 ## **所依赖的库**
 
 ```
 pod 'Moya'# 网络底层
-pod 'Moya/Combine', '~> 15.0'# 
+pod 'Moya/Combine', '~> 15.0'#
 pod 'KakaJSON'# JSON处理
 pod 'SwiftyJSON'# JSON处理
 ```
@@ -28,7 +27,7 @@ pod 'SwiftyJSON'# JSON处理
 
 ```bash
 .
-├── Apis 
+├── Apis
 │   └── UserAPI.swift - 写Api子弹的地方
 ├── Config
 │   ├── ApiConfig.swift  - Api总体配置的地方
@@ -43,8 +42,7 @@ pod 'SwiftyJSON'# JSON处理
     └── WarningPlugin.swift - 警告插件
 ```
 
-
-## **TargetType协议介绍**
+## **TargetType 协议介绍**
 
 ```swift
 import Foundation
@@ -83,10 +81,10 @@ public extension TargetType {
 }
 ```
 
-
-## **满足TargetType协议**
+## **满足 TargetType 协议**
 
 这些是每个子弹都不相同的信息
+
 ```swift
 import Foundation
 import Moya
@@ -101,15 +99,15 @@ public protocol FantasyTargetType: TargetType {
 
 ```
 
-
 这些是每个子弹都相同的基础信息，只需要设置一次 通常与项目有关
+
 ```swift
 
 public extension FantasyTargetType {
     var baseURL: URL {
         URL(string: AppConfig.baseUrl)?.appendingPathComponent(group) ?? URL(string: "https://test.com")!
     }
-    
+
     var path: String {
         let path = String(describing: self)
         return "/" + path.components(separatedBy: "(").first!
