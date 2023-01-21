@@ -39,7 +39,7 @@ export default function Speaking() {
       </Head>
       <SimpleLayout
         title="赵纯想出品 - iOS开发课程"
-        intro="专业内容，专业录制。从零到一，将你从计算机小白打造成对任何App信手拈来的开发者。"
+        intro="基础课程以单口相声风格演绎，看过的无一不惊叹技术教育的趣味性竟可以如此之高。专业课程文档全面覆盖，下拉即可以免费查看所有文档。详尽的文档，配合专业设备录制的高清4k视频。从零到一，将你从计算机小白打造成对任何App信手拈来的开发者。"
       >
         <div className="space-y-20">
         <CopyButton content='zhaochunxiang1109' btntitle='  点击复制微信号咨询' />
