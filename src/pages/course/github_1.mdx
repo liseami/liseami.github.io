@@ -3,77 +3,43 @@ import { ArticleLayout } from '@/components/ArticleLayout'
 export const meta = {
   author: '赵纯想',
   date: '2023-01-19',
-  title: 'Git使用：加入课程开源项目',
+  title: '准备：使用Git管理你的代码',
   description:
     '加入课程开源项目',
 }
 
 export default (props) => <ArticleLayout meta={meta} {...props} />
 
-## **Git介绍**
-
-Git是一个版本控制系统，可以记录文件和文件夹的更改历史，并允许多人协作开发项目。
-
-要使用Git，首先需要安装它。然后，可以在命令行中运行 git init 命令来初始化一个新项目的版本库。接下来，可以使用 git add 命令将文件添加到缓存区，然后使用 git commit 命令将文件的更改永久地提交到版本库中。
-
-其他常用的Git命令包括：
-
-git status：查看当前项目的状态
-
-git log：查看项目的提交历史
-
-git diff：查看文件的差异
-
-git branch：查看和管理分支
-
-git merge：合并分支
-
-git pull/push：从/向远程仓库拉取/推送更改
-
-Git也可以与远程仓库配合使用，如GitHub、GitLab等，可以方便的管理代码和协作开发。
 
 
+## Git 视频趣味教程
 
-## **使用Git**
+https://www.bilibili.com/video/BV1hS4y1S7wL/?spm_id_from=333.337.search-card.all.click&vd_source=657d9351ae87e8da9ec0f1670d72d27c
 
+## Git 全面补充介绍
 
-配置用户名和邮箱
-在终端中输入以下命令:
+https://www.jianshu.com/p/090ad27ea1b7
 
-```bash
-$ git config --global user.name "Your Name"
-$ git config --global user.email "your_email@example.com"
-```
+GitHub代码仓库使用说明
 
-初始化本地仓库
+## Git 菜鸟教程，随用随查
 
-```bash
-$ git init
-```
+https://www.runoob.com/git/git-create-repository.html
 
-添加文件
-```bash
-$ git add .
-```
+## Git 常用命令
 
-提交文件
-```bash
-$ git commit -m "Initial commit"
-```
+Git 是一个开源的版本控制系统，可以跟踪文件和文件夹的更改。
 
-连接远程仓库
-```bash
-$ git remote add origin https://github.com/username/repo.git
-```
+以下是一些常用的 Git 命令：
 
-推送文件
-```bash
-$ git push -u origin master
-```
+- `git init`：初始化一个新的 Git 仓库
+- `git clone <repository>`：克隆一个远程仓库到本地
+- `git add <file>`：添加文件到暂存区
+- `git commit -m "message"`：提交暂存区中的文件到本地仓库
+- `git push`：将本地仓库的提交推送到远程仓库
+- `git pull`：从远程仓库拉取最新的提交
+- `git status`：查看仓库当前的状态
+- `git log`：查看提交历史
 
 
-## **拉取纯想同学录项目**
-
-https://github.com/liseami/chunxiangfacebook.git
-
-保存到本地，看看能否运行项目
+这些命令只是 Git 的基本功能，它还有很多其他的命令和功能。在使用过程中，建议结合官方文档学习。

@@ -63,14 +63,14 @@ export default function Speaking() {
           <Appearance
               href="course/proDevEnv"
               title="准备：专业环境搭建"
-              description="专业环境搭建。"
+              description="学习如何安装zsh插件，homebrew，以及git。"
               event="最新录制 2022 - 持续更新"
               cta="查看文档"
             />
           <Appearance
               href="course/github_1"
-              title="重要：Git使用与加入课程开源项目"
-              description="加入课程开源项目。向同学们展示你写的个人主页。"
+              title="准备：使用Git管理你的代码"
+              description="让一切井井有条。"
               event="最新录制 2022 - 持续更新"
               cta="查看文档"
             />
