@@ -68,7 +68,7 @@ export default function Speaking() {
               cta="查看文档"
             />
           <Appearance
-              href="course/github_1"
+              href="course/github"
               title="准备：使用Git管理你的代码"
               description="让一切井井有条。"
               event="最新录制 2022 - 持续更新"
