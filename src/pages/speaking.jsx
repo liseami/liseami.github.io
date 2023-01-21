@@ -39,10 +39,10 @@ export default function Speaking() {
       </Head>
       <SimpleLayout
         title="赵纯想出品 - iOS开发课程"
-        intro="这个网站有些严肃？千万别这样想.我制作的技术入门课，被称为全网第一单口相声课程。技术的传播方式应该轻松+愉悦，这种似乎非传统非严肃的口吻，恰恰是我设置的一个愉悦门槛。如果你不能在我的课程中感到愉悦，那么意味着在未来编程的过程中，你也很难感到愉悦了。"
+        intro="专业内容，专业录制。从零到一，将你从计算机小白打造成对任何App信手拈来的开发者。"
       >
         <div className="space-y-20">
-        <CopyButton content='zhaochunxiang1109' btntitle='组合购买有优惠，购前请点击复制微信号咨询' />
+        <CopyButton content='zhaochunxiang1109' btntitle='  点击复制微信号咨询' />
           <SpeakingSection title="SwfitUI-入门课">
             <Appearance
               href="https://www.cctalk.com/m/group/90565680"
@@ -125,29 +125,6 @@ export default function Speaking() {
             />
             
           </SpeakingSection>
-          {/* <SpeakingSection title="Podcasts">
-            <Appearance
-              href="#"
-              title="Using design as a competitive advantage"
-              description="How we used world-class visual design to attract a great team, win over customers, and get more press for Planetaria."
-              event="Encoding Design, July 2022"
-              cta="Listen to podcast"
-            />
-            <Appearance
-              href="#"
-              title="Bootstrapping an aerospace company to $17M ARR"
-              description="The story of how we built one of the most promising space startups in the world without taking any capital from investors."
-              event="The Escape Velocity Show, March 2022"
-              cta="Listen to podcast"
-            />
-            <Appearance
-              href="#"
-              title="Programming your company operating system"
-              description="On the importance of creating systems and processes for running your business so that everyone on the team knows how to make the right decision no matter the situation."
-              event="How They Work Radio, September 2021"
-              cta="Listen to podcast"
-            />
-          </SpeakingSection> */}
         </div>
       </SimpleLayout>
     </>

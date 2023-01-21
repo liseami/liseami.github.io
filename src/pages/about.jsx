@@ -6,9 +6,9 @@ import clsx from 'clsx'
 import { Container } from '@/components/Container'
 import {
   TikTokIcon,
-  InstagramIcon,
   GitHubIcon,
-  LinkedInIcon,
+  TwitterIcon,
+  BiliBiliIcon,
 } from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.jpg'
 
@@ -92,8 +92,17 @@ export default function About() {
           </div>
           <div className="lg:pl-20">
             <ul role="list">
-              <SocialLink href="https://v.douyin.com/hfLkMQV/" icon={TikTokIcon}>
+              <SocialLink className='pt-3' href="https://v.douyin.com/hfLkMQV/" icon={TikTokIcon}>
                 在 抖音 上关注我
+              </SocialLink>
+              <SocialLink className='pt-3' href="https://space.bilibili.com/26317883/" icon={BiliBiliIcon}>
+                在 Bilibili 上关注我
+              </SocialLink>
+              <SocialLink className='pt-3' href="https://twitter.com/liseami1" icon={TwitterIcon}>
+                在Twitter 上关注我
+              </SocialLink>
+              <SocialLink className='pt-3' href="https://github.com/liseami" icon={GitHubIcon}>
+                在Github上关注我
               </SocialLink>
               {/* <SocialLink href="#" icon={InstagramIcon} className="mt-4">
                 Follow on Instagram

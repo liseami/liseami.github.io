@@ -10,6 +10,30 @@ export const meta = {
 
 export default (props) => <ArticleLayout meta={meta} {...props} />
 
+## **一切在终端中进行**
+Zsh是一种Unix shell，与常用的bash类似，但提供了一些额外的功能和特性。
+在 Mac 上，你可以通过在终端中输入 "zsh" 来启动它。
+
+您还可以将 zsh 设置为默认 shell，这样每次打开终端时就会自动启动。要设置 zsh 为默认 shell，请在终端中输入 "chsh -s /bin/zsh"。
+
+您还可以通过安装 oh-my-zsh 来为 zsh 添加额外的主题和插件。
+
+## **什么是Unix shell**
+Unix shell是指在Unix或Unix-like操作系统中用于交互式命令行界面的程序。它允许用户在操作系统中执行命令、脚本和程序，并与操作系统进行交互。常用的Unix shell包括bash、zsh、csh和tcsh等。它们提供了一种类似于Windows的命令提示符的界面，允许用户输入命令并获得相应的输出。这些shell还提供了许多特性，如命令行编辑、历史记录、自动补全和脚本编写等。
+
+常用的 Zsh 命令包括：
+
+```bash
+ls：列出当前目录中的文件和文件夹。
+cd：更改当前工作目录。
+mkdir：创建新文件夹。
+rm：删除文件。
+mv：移动或重命名文件。
+echo：向终端输出文本。
+cat：显示文件内容。
+history：显示命令历史。
+```
+
 ## **安装oh-my-zsh**
 Oh My Zsh 是一个令人愉快的、开源的、社区驱动的框架，用于管理你的 Zsh 配置。它捆绑了数以千计的有用功能、助手、插件、主题和一些让你大喊大叫的东西……
 
@@ -30,14 +54,53 @@ chsh -s $(which zsh)
 
 重启终端。
 
+要为 oh-my-zsh 添加插件，需要在 ~/.zshrc 文件中的 plugins=(...) 部分中添加插件名称。例如，要添加 git 插件，可以在 plugins=(...) 部分中添加 git。
+
+要为 oh-my-zsh 添加主题，需要在 ~/.zshrc 文件中的 ZSH_THEME=... 部分中添加主题名称。例如，要使用 "robbyrussell" 主题，可以在 ZSH_THEME=... 部分中添加 robbyrussell。
+
+修改完之后, 使用 source ~/.zshrc 更新配置文件.
+
+赵纯想的～/.zshrc 文件
+
+```bash
+# 随机主题
+ZSH_THEME="random"
+
+# 插件
+plugins=(git Z zsh-syntax-highlighting zsh-autosuggestions)
+```
+
+寻找主题
+https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+
+常用的插件
+https://zhuanlan.zhihu.com/p/61447507
+
 
 ## **安装Homebrew**
+
 
 使用 Homebrew 安装 Apple（或您的 Linux 系统）没有预装但 你需要的东西。
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/main/install.sh)"
 ```
+
+# brew 常用命令
+
+1. `brew install <package>`: 安装指定的软件包
+2. `brew uninstall <package>`: 卸载指定的软件包
+3. `brew update`: 更新brew及其所有已安装的软件包
+4. `brew upgrade <package>`: 更新指定的软件包
+5. `brew search <query>`: 搜索可用软件包
+6. `brew list`: 列出已安装的软件包
+7. `brew info <package>`: 显示指定软件包的详细信息
+8. `brew cleanup`: 清理无用文件
+9. `brew doctor`: 检查并修复brew的安装
+10. `brew create <url>`: 使用指定URL创建软件包formula
+
+如果您想要了解更多关于brew命令的信息，可以在终端中输入“brew help”。
+
 
 ## **Git安装**
 
@@ -47,9 +110,11 @@ brew install git
 ```
 并回车，就可以在几分钟内完成安装。
 
-下载安装包：可以从 Git 官网上下载 Mac 版本的安装包并进行安装。下载地址：https://git-scm.com/downloads
-
-使用 xcode-select 安装：在终端中输入 xcode-select --install 命令，就可以安装 Git。
+输入
+```bash
+brew list
+```
+一下，看看有没有git
 
 
 ##  **Git桌面版安装**
