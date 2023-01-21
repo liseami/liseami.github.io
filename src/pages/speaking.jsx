@@ -69,7 +69,7 @@ export default function Speaking() {
             />
           <Appearance
               href="course/github_1"
-              title="重要：加入课程开源项目"
+              title="重要：Git使用与加入课程开源项目"
               description="加入课程开源项目。向同学们展示你写的个人主页。"
               event="最新录制 2022 - 持续更新"
               cta="查看文档"
