@@ -1,5 +1,8 @@
 import { ArticleLayout } from '@/components/ArticleLayout'
 import { inlineCode } from '@mdx-js/react'
+import Image from 'next/image'
+import networktooltree from './networktooltree.png'
+
 
 export const meta = {
   author: 'Zhao Chunxiang',
@@ -13,6 +16,8 @@ export default (props) => <ArticleLayout meta={meta} {...props} />
 <a href="https://www.aliyundrive.com/s/VPSsMAfusTK" download="file.zip">
   下载赵纯想武器库
 </a>
+
+<Image src={networktooltree} alt="" />
 
 ## **所依赖的库**
 

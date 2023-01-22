@@ -42,7 +42,7 @@ export default function Speaking() {
         intro="基础课程以单口相声风格演绎，看过的无一不惊叹技术教育的趣味性竟可以如此之高。专业课程文档全面覆盖，下拉即可以免费查看所有文档。详尽的文档，配合专业设备录制的高清4k视频。从零到一，将你从计算机小白打造成对任何App信手拈来的开发者。"
       >
         <div className="space-y-20">
-        <CopyButton content='zhaochunxiang1109' btntitle='  点击复制微信号咨询' />
+          <CopyButton content='zhaochunxiang1109' btntitle='  点击复制微信号咨询' />
           <SpeakingSection title="SwfitUI-入门课">
             <Appearance
               href="https://www.cctalk.com/m/group/90565680"
@@ -60,14 +60,14 @@ export default function Speaking() {
             />
           </SpeakingSection>
           <SpeakingSection title="SwfitUI-进阶课">
-          <Appearance
+            <Appearance
               href="course/proDevEnv"
               title="准备：专业环境搭建"
               description="学习如何安装zsh插件，homebrew，以及git。"
               event="最新录制 2022 - 持续更新"
               cta="查看文档"
             />
-          <Appearance
+            <Appearance
               href="course/github"
               title="准备：使用Git管理你的代码"
               description="让一切井井有条。"
@@ -123,7 +123,7 @@ export default function Speaking() {
               event="最新录制 2022 - 持续更新"
               cta="查看文档"
             />
-            
+
           </SpeakingSection>
         </div>
       </SimpleLayout>

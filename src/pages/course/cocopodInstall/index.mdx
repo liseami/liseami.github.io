@@ -1,4 +1,7 @@
 import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+import swifterswift from './swifterswift.png'
+
 
 export const meta = {
   author: 'Zhao Chunxiang',
@@ -59,7 +62,15 @@ sudo gem install cocoapods
 这将在您的计算机上安装CocoaPods。
 
 
-## **使用CocoaPods向Xcode项目安装软件包的步骤**
+## **使用CocoaPods向Xcode项目安装软件包**
+
+### **推荐软件包：SwifterSwift**
+
+<Image src={swifterswift} alt="" />
+
+https://github.com/SwifterSwift/SwifterSwift
+
+SwifterSwift 是500 多个本机 Swift 扩展的集合，具有方便的方法、语法糖和针对各种原始数据类型、UIKit 和 Cocoa 类的性能改进——超过 500 个合 1——适用于 iOS、macOS、tvOS、watchOS 和 Linux。
 
 创建或打开一个Xcode项目。
 
@@ -73,10 +84,10 @@ pod init
 使用编辑器打开Podfile，在其中添加您需要使用的第三方库和框架。例如：
 
 ```
-pod 'AFNetworking', '~> 3.0' 
+pod 'SwifterSwift'
 ```
 
-这表示安装AFNetworking库，版本3.0及以上。
+这表示安装'SwifterSwift'库
 
 保存Podfile。
 
@@ -89,11 +100,3 @@ pod install
 这将安装您在Podfile中指定的所有依赖项。
 
 打开您的项目，从现在开始，您应该使用<b>.xcworkspaced</b>文件而不是.xcodeproj文件进行开发。
-
-在项目中使用软件包的时候，在需要的文件中导入即可，例如： 
-
-```
-#import <AFNetworking/AFNetworking.h> 
-```
-
-注意: 在Podfile文件中还可以配置项目的target，确定哪个target使用哪些库。
