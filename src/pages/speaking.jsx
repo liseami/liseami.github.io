@@ -90,7 +90,7 @@ export default function Speaking() {
             />
             <Appearance
               href="course/cocopodInstall"
-              title="3-CocoPods介绍与安装"
+              title="3-CocoaPods介绍与安装"
               description="CocoaPods是一个用于iOS和macOS开发的依赖管理工具。它允许开发人员管理第三方库和框架的依赖关系，并将其集成到Xcode项目中。"
               event="最新录制 2022 - 持续更新"
               cta="查看文档"

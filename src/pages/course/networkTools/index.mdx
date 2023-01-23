@@ -47,6 +47,127 @@ pod 'SwiftyJSON'# JSON处理
     └── WarningPlugin.swift - 警告插件
 ```
 
+
+## **本课语法相关：协议Protocol**
+
+协议是 Swift 中的一种特殊类型，它定义了一组方法、属性和其他特性的要求。类、结构体和枚举都可以遵循协议。
+
+定义一个协议，需要使用 protocol 关键字，如下所示：
+
+```swift
+protocol ExampleProtocol {
+    // 协议定义
+}
+```
+
+类、结构体或枚举遵循协议，需要在类型名称后面加上协议名称，如下所示：
+```swift
+struct ExampleStruct: ExampleProtocol {
+    // 结构体定义
+}
+```
+
+示例：
+
+- 自定义一个可被打印的协议
+```swift
+protocol Printable {
+    func printSelf()
+}
+
+struct Person: Printable {
+    var name: String
+    func printSelf() {
+        print(name)
+    }
+}
+```
+
+- 定义一个协议，要求遵循协议的类型必须具有某个属性
+```swift
+protocol HasWidth {
+    var width: Double { get }
+}
+
+struct Room: HasWidth {
+    let width: Double
+}
+```
+
+- 定义一个协议，要求遵循协议的类型必须具有某个方法
+
+```swift
+protocol Doable {
+    func doIt()
+}
+
+class Task: Doable {
+    func doIt() {
+        print("Task is done!")
+    }
+}
+```
+
+## **本课语法相关：枚举Case**
+
+枚举是 Swift 语言中的一种数据类型，它可以定义一组有限的可能值。枚举通常用来表示一个变量可能的状态。
+
+以下是一个简单的枚举定义示例：
+
+```swift
+enum CompassPoint {
+    case north
+    case south
+    case east
+    case west
+}
+```
+
+
+在上面的示例中，我们定义了一个名为 CompassPoint 的枚举，它有四个可能的值: north，south，east 和 west。
+
+您可以使用这种方式为枚举类型的变量赋值：
+
+```swift
+var directionToHead = CompassPoint.west
+directionToHead = .east
+```
+
+您也可以使用枚举类型的值作为控制语句中的条件：
+
+```swift
+if directionToHead == .north {
+    print("Lots of planets have a north")
+} else if directionToHead == .south {
+    print("Watch out for penguins")
+} else if directionToHead == .east {
+    print("Where the sun rises")
+} else if directionToHead == .west {
+    print("Where the skies are blue")
+}
+```
+
+您还可以将枚举类型的值作为参数传递给函数：
+
+
+```swift
+func navigate(direction: CompassPoint) {
+    if direction == .north {
+        print("Going north")
+    } else if direction == .south {
+        print("Going south")
+    } else if direction == .east {
+        print("Going east")
+    } else if direction == .west {
+        print("Going west")
+    }
+}
+
+navigate(direction: .west)
+```
+
+这就是 Swift 中枚举的基本用法。您还可以在枚举中添加关联值或原始值来扩展其功能。
+
 ## **TargetType 协议介绍**
 
 ```swift
@@ -88,42 +209,67 @@ public extension TargetType {
 
 ## **满足 TargetType 协议**
 
-这些是每个子弹都不相同的信息
+配置一个API的过程
 
 ```swift
 import Foundation
-import Moya
 
-public typealias HTTPRequestMethod = Moya.Method
-
-public protocol FantasyTargetType: TargetType {
-    var parameters: [String: Any]? { get }
-    var parameterEncoding: ParameterEncoding { get }
-    var group: String { get }
+enum SearchAPI: ChunxiangTargetType {
+// 搜索食物的卡路里，keyword为关键词
+case searchCalory(keyword: String)
+// API路径
+var path: String {
+    switch self {
+    case .searchCalory:
+        return "food_heat/food/search"
+    }
 }
 
+// 请求方法，这里为GET请求
+var method: HTTPRequestMethod {
+    switch self {
+    case .searchCalory:
+        return .get
+    }
+}
+
+// 请求参数，包括关键词、页码、app_id、app_secret
+var parameters: [String: Any]? {
+    switch self {
+    case .searchCalory(keyword: let keyword):
+        return ["keyword": keyword,
+                "page": 1,
+                "app_id": "rgihdrm0kslojqvm",
+                "app_secret": "WnhrK251TWlUUThqaVFWbG5OeGQwdz09"]
+    }
+}
+}
 ```
+
 
 这些是每个子弹都相同的基础信息，只需要设置一次 通常与项目有关
 
 ```swift
 
-public extension FantasyTargetType {
+public extension ChunxiangTargetType {
+    // 基础URL
     var baseURL: URL {
-        URL(string: AppConfig.baseUrl)?.appendingPathComponent(group) ?? URL(string: "https://test.com")!
+        URL(string: "https://www.mxnzp.com/api")!
     }
-
+    
+    // 路径
     var path: String {
         let path = String(describing: self)
         return "/" + path.components(separatedBy: "(").first!
     }
 
-    var group: String { "" }
 
+    // 示例数据
     var sampleData: Data {
         "".data(using: String.Encoding.utf8)!
     }
 
+    // 请求任务
     var task: Task {
         switch method {
         case .get:
@@ -138,9 +284,11 @@ public extension FantasyTargetType {
             return .requestPlain
         }
     }
-
+  
+    // 请求参数
     var parameters: [String: Any]? { nil }
 
+    // 参数编码
     var parameterEncoding: ParameterEncoding {
         switch method {
         case .get: return URLEncoding.default
@@ -148,12 +296,13 @@ public extension FantasyTargetType {
         }
     }
 
-    // Token in Header...
+    // 设置通用的Header
     var headers: [String: String]? {
+        
         var headers: [String: String] = [:]
-        headers["x-lc-session"] = UserManager.shared.accessToken
+        headers["Content-Type"] = "application/json"
         return headers
     }
 }
-
 ```
+
