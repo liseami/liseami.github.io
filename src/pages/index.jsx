@@ -304,29 +304,29 @@ export default function Home({ articles }) {
 
       <Head>
         <title>
-          赵纯想个人网站 - 产品，课程，文学和博客
+          杨勇海个人网站 - 生活，产品，随想和博客
         </title>
         <meta
-          name="赵纯想个人网站"
-          content="我写一些小说，代码和剧本。目标是拍电影。"
+          name="杨勇海个人网站"
+          content="杨勇海个人网站"
         />
       </Head>
       <Container className="mt-24">
         <div className="max-w-2xl pb-24">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            赵纯想个人网站
+            杨勇海个人网站
           </h1>
 
           {/* 联系方式连接 */}
           <SocialLinks />
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            这是我的<CopyButton content="zhaochunxiang1109" btntitle='私人微信' className="text-emerald-600" />，注明来意。
+            这是我的<CopyButton content="yangyonghai9125" btntitle='私人微信' className="text-emerald-600" />，注明来意。
           <br></br>
           <br></br>
             写小说、代码和剧本。<Link href="https://apps.apple.com/cn/app/%E8%BD%AC%E5%B1%B1-%E8%A1%8C%E4%B8%BA%E4%B9%A0%E6%83%AF%E5%A1%91%E9%80%A0/id6444640823" className="text-emerald-600">转山App</Link>开发者。
             过去在
-            <Link href="https://www.haoshuo.com/" className="text-emerald-600">好说</Link>,
-            <Link href="https://www.newtouch.com//" className="text-emerald-600">新致软件</Link>。
+            <Link href="https://www.sprit.vip/" className="text-emerald-600">个人博客</Link>,
+            <Link href="https://me.sprit.com/" className="text-emerald-600">新致软件</Link>。
             现在是一名独立开发者，居无定所，录制课程和视频。
             <Link href="/speaking" className="text-emerald-600">点击这里</Link>
             可以找到我录制的iOS开发课程。文学方面，出版作品有
