@@ -10,12 +10,11 @@ export const meta = {
 
 export default (props) => <ArticleLayout meta={meta} {...props} />
 
-## **在SwiftUI中使用UIkit中的邮件发送器**
+## **在 SwiftUI 中使用 UIkit 中的邮件发送器**
 
+SwiftUI 和 UIKit 是两种不同的界面框架，它们之间没有直接的互相调用方法。如果您想在 SwiftUI 中使用 UIKit 中的视图，可以使用 UIViewRepresentable 协议将 UIKit 视图包装成 SwiftUI 视图，然后在 SwiftUI 界面中使用。
 
-SwiftUI和UIKit是两种不同的界面框架，它们之间没有直接的互相调用方法。如果您想在SwiftUI中使用UIKit中的视图，可以使用UIViewRepresentable协议将UIKit视图包装成SwiftUI视图，然后在SwiftUI界面中使用。
-
-下面是一个示例，展示了如何使用UIViewRepresentable协议在SwiftUI中使用UIKit中的MFMailComposeViewController视图：
+下面是一个示例，展示了如何使用 UIViewRepresentable 协议在 SwiftUI 中使用 UIKit 中的 MFMailComposeViewController 视图：
 
 ```swift
 struct SendMailView: UIViewControllerRepresentable {
@@ -35,8 +34,7 @@ struct SendMailView: UIViewControllerRepresentable {
 }
 ```
 
-
-## **在SwiftUI中使用UIkit框架中的照片选择器**
+## **在 SwiftUI 中使用 UIkit 框架中的照片选择器**
 
 ```swift
 struct SinglePhotoSelector: UIViewControllerRepresentable {
@@ -82,5 +80,5 @@ struct SinglePhotoSelector: UIViewControllerRepresentable {
 }
 ```
 
-注意：在使用UIActivityViewController时，
-您需要在info.plist中添加一个键为“Privacy - Photo Library Usage Description”的字符串来获取相册的访问权限
+注意：在使用 UIActivityViewController 时，
+您需要在 info.plist 中添加一个键为“Privacy - Photo Library Usage Description”的字符串来获取相册的访问权限

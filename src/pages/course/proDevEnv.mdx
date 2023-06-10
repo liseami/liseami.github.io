@@ -11,15 +11,17 @@ export const meta = {
 export default (props) => <ArticleLayout meta={meta} {...props} />
 
 ## **一切在终端中进行**
-Zsh是一种Unix shell，与常用的bash类似，但提供了一些额外的功能和特性。
+
+Zsh 是一种 Unix shell，与常用的 bash 类似，但提供了一些额外的功能和特性。
 在 Mac 上，你可以通过在终端中输入 "zsh" 来启动它。
 
 您还可以将 zsh 设置为默认 shell，这样每次打开终端时就会自动启动。要设置 zsh 为默认 shell，请在终端中输入 "chsh -s /bin/zsh"。
 
 您还可以通过安装 oh-my-zsh 来为 zsh 添加额外的主题和插件。
 
-## **什么是Unix shell**
-Unix shell是指在Unix或Unix-like操作系统中用于交互式命令行界面的程序。它允许用户在操作系统中执行命令、脚本和程序，并与操作系统进行交互。常用的Unix shell包括bash、zsh、csh和tcsh等。它们提供了一种类似于Windows的命令提示符的界面，允许用户输入命令并获得相应的输出。这些shell还提供了许多特性，如命令行编辑、历史记录、自动补全和脚本编写等。
+## **什么是 Unix shell**
+
+Unix shell 是指在 Unix 或 Unix-like 操作系统中用于交互式命令行界面的程序。它允许用户在操作系统中执行命令、脚本和程序，并与操作系统进行交互。常用的 Unix shell 包括 bash、zsh、csh 和 tcsh 等。它们提供了一种类似于 Windows 的命令提示符的界面，允许用户输入命令并获得相应的输出。这些 shell 还提供了许多特性，如命令行编辑、历史记录、自动补全和脚本编写等。
 
 常用的 Zsh 命令包括：
 
@@ -38,20 +40,23 @@ Unix shell是指在Unix或Unix-like操作系统中用于交互式命令行界面
 
 注意：在使用 `rm` 和 `mv` 命令时应格外小心，因为这些命令不可撤销。
 
-## **安装oh-my-zsh**
+## **安装 oh-my-zsh**
+
 Oh My Zsh 是一个令人愉快的、开源的、社区驱动的框架，用于管理你的 Zsh 配置。它捆绑了数以千计的有用功能、助手、插件、主题和一些让你大喊大叫的东西……
 
 https://ohmyz.sh/
 
-
 安装 oh-my-zsh，
 使用命令：
+
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
+
 重启终端。
 
 切换默认 shell 为 zsh，使用命令：
+
 ```bash
 chsh -s $(which zsh)
 ```
@@ -80,48 +85,49 @@ https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 常用的插件
 https://zhuanlan.zhihu.com/p/61447507
 
-
-## **安装Homebrew**
+## **安装 Homebrew**
 
 https://brew.sh/
 
 使用 Homebrew 安装 Apple（或您的 Linux 系统）没有预装但 你需要的东西。
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/main/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 # brew 常用命令
 
 1. `brew install <package>`: 安装指定的软件包
 2. `brew uninstall <package>`: 卸载指定的软件包
-3. `brew update`: 更新brew及其所有已安装的软件包
+3. `brew update`: 更新 brew 及其所有已安装的软件包
 4. `brew upgrade <package>`: 更新指定的软件包
 5. `brew search <query>`: 搜索可用软件包
 6. `brew list`: 列出已安装的软件包
 7. `brew info <package>`: 显示指定软件包的详细信息
 8. `brew cleanup`: 清理无用文件
-9. `brew doctor`: 检查并修复brew的安装
-10. `brew create <url>`: 使用指定URL创建软件包formula
+9. `brew doctor`: 检查并修复 brew 的安装
+10. `brew create <url>`: 使用指定 URL 创建软件包 formula
 
-如果您想要了解更多关于brew命令的信息，可以在终端中输入“brew help”。
+如果您想要了解更多关于 brew 命令的信息，可以在终端中输入“brew help”。
 
+## **Git 安装**
 
-## **Git安装**
+使用 Homebrew：Homebrew 是 Mac 上最流行的包管理器之一，可以使用它来安装 Git。打开终端，输入
 
-使用 Homebrew：Homebrew 是 Mac 上最流行的包管理器之一，可以使用它来安装 Git。打开终端，输入 
 ```bash
-brew install git 
+brew install git
 ```
+
 并回车，就可以在几分钟内完成安装。
 
 输入
+
 ```bash
 brew list
 ```
-一下，看看有没有git
 
+一下，看看有没有 git
 
-##  **Git桌面版安装**
+## **Git 桌面版安装**
 
 https://desktop.github.com/

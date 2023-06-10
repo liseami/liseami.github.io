@@ -1,0 +1,85 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { inlineCode } from '@mdx-js/react'
+
+export const meta = {
+  author: 'Zhao Chunxiang',
+  date: '2023-01-22',
+  title: '进阶课程（8）CoreData本地数据',
+  description: '本地数据',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+## **以下是一个简单的 Core Data Persistence Controller，可以在 SwiftUI 中使用。**
+
+SwiftUI 和 UIKit 是两种不同的界面框架，它们之间没有直接的互相调用方法。如果您想在 SwiftUI 中使用 UIKit 中的视图，可以使用 UIViewRepresentable 协议将 UIKit 视图包装成 SwiftUI 视图，然后在 SwiftUI 界面中使用。
+
+下面是一个示例，展示了如何使用 UIViewRepresentable 协议在 SwiftUI 中使用 UIKit 中的 MFMailComposeViewController 视图：
+
+```swift
+import CoreData
+
+struct PersistenceController {
+    static let shared = PersistenceController()
+
+    let container: NSPersistentContainer
+
+    init(inMemory: Bool = false) {
+        container = NSPersistentContainer(name: "YourAppName")
+
+        if inMemory {
+            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+        }
+
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+    }
+
+    func save() {
+        let context = container.viewContext
+
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
+    }
+}
+```
+
+## **要使用这个 PersistenceController，你可以将其设置为一个环境对象并在 SwiftUI 中注入它。**
+
+```swift
+@main
+struct YourAppNameApp: App {
+    let persistenceController = PersistenceController.shared
+
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+        }
+    }
+}
+```
+
+在这个示例中，我们将 PersistenceController 设置为 YourAppNameApp 的属性，并在 ContentView 中注入了 managedObjectContext。这样，我们就可以在 SwiftUI 中访问 Core Data 了。
+
+例如，你可以在 SwiftUI 视图中执行查询、添加、删除等操作，如下所示：
+
+```swift
+struct ContentView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+
+    var body: some View {
+        // Perform Core Data operations using the viewContext
+        // ...
+    }
+}
+```

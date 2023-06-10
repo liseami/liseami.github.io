@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+import naduoyun from '@/images/photos/naduoyun.png'
 import huaiyihuai from '@/images/photos/huaiyihuai.png'
 import renshengcancan from '@/images/photos/renshengcancan.png'
 import chuntianjianshi from '@/images/photos/chuntianjianshi.webp'
@@ -12,10 +12,17 @@ import Link from 'next/link'
 
 const projects = [
   {
+    name: '那朵 - 数字永生',
+    description:
+      '数字永生与在线缅怀应用。',
+    link: { href: 'https://naduo.love', label: '查看官网' },
+    logo: naduoyun,
+  },
+  {
     name: '转山 - 公测中',
     description:
       '个人行为习惯管理软件.',
-    link: { href: 'https://apps.apple.com/cn/app/%E8%BD%AC%E5%B1%B1-%E8%A1%8C%E4%B8%BA%E4%B9%A0%E6%83%AF%E5%A1%91%E9%80%A0/id6444640823)', label: '点击加入公测' },
+    link: { href: 'https://apps.apple.com/app/id6444640823', label: '点击下载' },
     logo: lifelooplogo,
   },
   {
@@ -66,7 +73,7 @@ export default function Projects() {
         title="这些是我在这个星球上创造的一些东西。寥寥无几，满含诚意。"
         intro="Rage, rage against the dying of the light.痛斥光阴的飞逝！"
       >
-        <ProjectList/>
+        <ProjectList />
       </SimpleLayout>
     </>
   )
@@ -76,29 +83,29 @@ export default function Projects() {
 export function ProjectList() {
   return (
     <ul
-    role="list"
-    className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
-  >
-    {projects.map((project) => (
-      <Card as="li" key={project.name}>
-        <div className="relative z-10 flex h-24 w-24 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-          <Image
-            src={project.logo}
-            alt=""
-            className="h-20 w-20 object-cover rounded-full"
-            unoptimized
-          />
-        </div>
-        <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-          <Card.Link href={project.link.href}>{project.name}</Card.Link>
-        </h2>
-        <Card.Description>{project.description}</Card.Description>
-        <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-          <LinkIcon className="h-6 w-6 flex-none" />
-          <Link  href={project.link.href} className="ml-2"  target="_blank">{project.link.label}</Link>
-        </p>
-      </Card>
-    ))}
-  </ul>
+      role="list"
+      className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+    >
+      {projects.map((project) => (
+        <Card as="li" key={project.name}>
+          <div className="relative z-10 flex h-24 w-24 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+            <Image
+              src={project.logo}
+              alt=""
+              className="h-20 w-20 object-cover rounded-full"
+              unoptimized
+            />
+          </div>
+          <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+            <Card.Link href={project.link.href}>{project.name}</Card.Link>
+          </h2>
+          <Card.Description>{project.description}</Card.Description>
+          <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+            <LinkIcon className="h-6 w-6 flex-none" />
+            <Link href={project.link.href} className="ml-2" target="_blank">{project.link.label}</Link>
+          </p>
+        </Card>
+      ))}
+    </ul>
   )
 }
