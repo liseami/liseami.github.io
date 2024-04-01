@@ -72,12 +72,15 @@ export default function Home({ articles }) {
             这是我的<CopyButton content="zhaochunxiang1109" btntitle='私人微信' className="text-emerald-600" />，注明来意。
             <br></br>
             <br></br>
-            写小说、代码和剧本。
-            <Link href="https://naduo.love/" className="text-emerald-600">那朵App（数字永生与数字缅怀）</Link>创始人。
+            写写小说、代码和剧本。最近在开发 胃之书 - AI美食记录员App。
+            <Link href="https://naduo.love/" className="text-emerald-600">那朵App（数字永生与数字缅怀）</Link>创始人（目前暂停运营）。
             <Link href="https://apps.apple.com/cn/app/%E8%BD%AC%E5%B1%B1-%E8%A1%8C%E4%B8%BA%E4%B9%A0%E6%83%AF%E5%A1%91%E9%80%A0/id6444640823" className="text-emerald-600">转山App</Link>开发者。
             居无定所，录制课程和视频。
             <Link href="/speaking" className="text-emerald-600">点击这里</Link>
-            可以找到我录制的iOS开发课程。文学方面，出版作品有
+            可以找到我录制的iOS开发课程。
+            <Link href="/articles/" className="text-emerald-600">点击这里</Link>
+            可以找到我录制的《赵纯想改序道德经课程》
+            文学方面，出版作品有
             <Link href="https://book.douban.com/subject/26990080/" className="text-emerald-600">《坏一坏》</Link>、
             <Link href="https://book.douban.com/subject/34865437/" className="text-emerald-600">《人生灿灿》</Link>，另外，有几篇
             <Link href="/articles" className="text-emerald-600">本站可阅读的文章</Link>。
@@ -85,7 +88,8 @@ export default function Home({ articles }) {
             <Link href="https://nextjs.org/" className="text-emerald-600">Next.js</Link>、
             <Link href="https://reactjs.org/" className="text-emerald-600">React</Link>搭建，
             也使用了基于
-            <Link href="https://tailwindcss.com/" className="text-emerald-600">TailwindCSS</Link>的模版。在我的Github中，
+            <Link href="https://tailwindcss.com/" className="text-emerald-600">TailwindCSS</Link>的模版。在我的
+            <Link href="https://github.com/liseami" className='text-emerald-600'>Github</Link>中，
             你也可以找到源码。
             <br></br>
             <br></br>

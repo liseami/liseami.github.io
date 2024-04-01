@@ -11,20 +11,7 @@ import lifelooplogo from '@/images/photos/lifelooplogo.png'
 import Link from 'next/link'
 
 const projects = [
-  {
-    name: '那朵 - 数字永生',
-    description:
-      '数字永生与在线缅怀应用。',
-    link: { href: 'https://naduo.love', label: '查看官网' },
-    logo: naduoyun,
-  },
-  {
-    name: '转山 - 公测中',
-    description:
-      '个人行为习惯管理软件.',
-    link: { href: 'https://apps.apple.com/app/id6444640823', label: '点击下载' },
-    logo: lifelooplogo,
-  },
+
   {
     name: '《坏一坏》',
     description:
