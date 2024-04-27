@@ -10,7 +10,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "next build && lean deploy -m '部署个人网站'"
+    "deploy": "next build && next start --port 4000"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {

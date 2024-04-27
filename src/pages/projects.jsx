@@ -1,17 +1,21 @@
 import Image from 'next/image'
 import Head from 'next/head'
-
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import naduoyun from '@/images/photos/naduoyun.png'
 import huaiyihuai from '@/images/photos/huaiyihuai.png'
+import bellybooklogo from "@/images/photos/bellybook.png"
 import renshengcancan from '@/images/photos/renshengcancan.png'
 import chuntianjianshi from '@/images/photos/chuntianjianshi.webp'
-import lifelooplogo from '@/images/photos/lifelooplogo.png'
 import Link from 'next/link'
 
 const projects = [
-
+  {
+    name: '胃之书App',
+    description:
+      'AI饮食记录员。上线2天突破10000用户。',
+    link: { href: 'https://bellybook.cn', label: '胃之书App官网下载' },
+    logo: bellybooklogo,
+  },
   {
     name: '《坏一坏》',
     description:
