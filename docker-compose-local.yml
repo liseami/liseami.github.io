@@ -1,0 +1,18 @@
+version: '3'
+services:
+  app:
+    container_name: zhaochunxiang-web
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5999:5999"
+    environment:
+      - NODE_ENV=production
+    command: sh -c "npm run build && npm run start"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5999"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: on-failure
