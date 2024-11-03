@@ -2,15 +2,19 @@ import nextMDX from '@next/mdx'
 import remarkGfm from 'remark-gfm'
 import rehypePrism from '@mapbox/rehype-prism'
 
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  pageExtensions: ['jsx', 'mdx'],
-  reactStrictMode: true,
-  experimental: {
-    scrollRestoration: true,
-  },
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   output: 'export',
-  distDir: 'out',
+  distDir: '.next',
+  images: {
+    unoptimized: true,
+  },
+  webpack: (config) => {
+    config.cache = false
+    return config
+  },
 }
 
 const withMDX = nextMDX({
