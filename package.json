@@ -8,8 +8,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 5999",
-    "lint": "next lint"
+    "build:analyze": "NEXT_DISABLE_CACHE=1 ANALYZE=true next build",
+    "start": "next start -p 6009",
+    "lint": "next lint",
+    "export": "next export"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
