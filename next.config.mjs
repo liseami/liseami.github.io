@@ -9,8 +9,9 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  output: 'export',
+  distDir: '.next',
 }
-
 
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
