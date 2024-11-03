@@ -10,7 +10,7 @@ const nextConfig = {
     scrollRestoration: true,
   },
   output: 'export',
-  distDir: '.next',
+  distDir: 'out',
 }
 
 const withMDX = nextMDX({
